@@ -23,6 +23,10 @@ header {
 	padding-right: 1%;
 }
 
+.background-image {
+	width: 100%;
+}
+
 .shadow {
 	box-shadow: 0 4px 10px black;
 }
