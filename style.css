@@ -16,10 +16,15 @@ h5 {
 }
 
 header {
-	background-color: #ff000089;
+	background-color: #ededed;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding-right: 1%;
+}
+
+.shadow {
+	box-shadow: 0 4px 10px black;
 }
 
 .menu-icon {
