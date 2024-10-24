@@ -16,14 +16,20 @@ h5 {
 }
 
 header {
+	position: sticky;
 	background-color: #ededed;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding-right: 1%;
+	z-index: 99;
 }
 
-.background-image {
+header > a > img {
+	height: 7em;
+}
+
+main > img {
 	width: 100%;
 }
 
@@ -32,6 +38,6 @@ header {
 }
 
 .menu-icon {
-	height: 40px;
-	width: 40px;
+	height: 2em;
+	filter: drop-shadow(0px 0px 5px rgb(0 0 0 / 0.4));
 }
