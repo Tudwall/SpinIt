@@ -64,6 +64,20 @@ main > img {
 	width: 100%;
 }
 
+.lines {
+	height: 100px;
+	background-image: linear-gradient(
+		to bottom,
+		#f2af26,
+		#f2af26 33%,
+		#ad343e 33%,
+		#ad343e 66%,
+		#3f88c5 66%,
+		#3f88c5 100%
+	);
+	background-size: 100% 100px;
+}
+
 .header-wrapper {
 	display: flex;
 	align-items: center;
