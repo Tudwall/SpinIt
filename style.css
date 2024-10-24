@@ -41,6 +41,25 @@ nav > div > a {
 	align-items: center;
 }
 
+main {
+	position: relative;
+	text-align: center;
+}
+
+main > div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+main > button {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 main > img {
 	width: 100%;
 }
@@ -51,9 +70,8 @@ main > img {
 	justify-content: space-between;
 	padding-right: 1%;
 }
-
 .shadow {
-	box-shadow: 0 4px 10px black;
+	box-shadow: 0 2px 10px black;
 }
 
 .menu-icon {
