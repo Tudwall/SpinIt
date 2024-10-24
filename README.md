@@ -1,3 +1,5 @@
+![Logo de Spin It](./icons/SpintIt-lineson.svg "SpinIt!")
+
 #### ATTRIBUTIONS
 
 Background player photo by Lee Campbell @ Unsplash  
