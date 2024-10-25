@@ -29,13 +29,22 @@ nav {
 	font-family: "Fira Sans", serif;
 	font-size: 1.25em;
 	height: 2em;
+}
+
+nav > ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
 }
 
-nav > div > a {
+nav > ul > li {
+	text-align: center;
+	list-style-type: none;
+	flex-grow: 1;
+}
+
+nav > ul > li > a {
 	color: #474747;
 	text-decoration: none;
 	align-items: center;
