@@ -8,3 +8,5 @@ Cassette icon by https://thenounproject.com/creator/seochan.art
 UI icons by https://thenounproject.com/creator/styfico/  
 List icons by https://thenounproject.com/creator/kevinwhitedesign/  
 Arrow icons by https://thenounproject.com/creator/mocrois/
+
+©2024 tous droits réservés
