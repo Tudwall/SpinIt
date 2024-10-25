@@ -25,6 +25,27 @@ header > a > img {
 	height: 7em;
 }
 
+header > div > form {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+header > div > form > input[type="text"] {
+	font-family: "Montserrat", serif;
+	border: none;
+	box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.24);
+	width: 33%;
+	border-radius: 50px;
+	padding: 1%;
+	background-color: #fbe6bd;
+}
+
+/* Put in search bar */
+header > div > form > img {
+	height: 2em;
+}
+
 nav {
 	font-family: "Fira Sans", serif;
 	font-size: 1.25em;
@@ -58,7 +79,7 @@ main {
 
 main > div {
 	position: absolute;
-	top: 50%;
+	top: 30%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: rgba(255, 255, 255, 0.24);
@@ -72,7 +93,7 @@ main > div {
 
 main > button {
 	position: absolute;
-	top: 65%;
+	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
