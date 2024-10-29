@@ -63,7 +63,7 @@ header > div > form > input[type="text"] {
 }
 
 input[type="text"]:focus {
-	border: none;
+	outline: 0;
 }
 
 input[type="text"]:focus + #search-filters {
