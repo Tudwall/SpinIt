@@ -44,7 +44,7 @@ header > div > form > input[type="text"] {
 	display: inline-block;
 }
 
-.search-filters {
+#search-filters {
 	display: none;
 	font-family: "Montserrat", serif;
 	position: absolute;
@@ -57,7 +57,7 @@ header > div > form > input[type="text"] {
 	top: 50%;
 }
 
-.search-filters > ul {
+#search-filters > ul {
 	display: flex;
 	flex-direction: column;
 }
@@ -66,7 +66,7 @@ input[type="text"]:focus {
 	border: none;
 }
 
-input[type="text"]:focus + .search-filters {
+input[type="text"]:focus + #search-filters {
 	display: block;
 }
 
