@@ -81,7 +81,6 @@ nav {
 	height: 2em;
 }
 
-/* Trouver un moyen pour le centrer */
 nav > ul {
 	display: flex;
 	flex-direction: row;
@@ -133,7 +132,7 @@ main > img {
 	width: 100%;
 }
 
-/* Trouver moyen pour mettre les ombres sur chaque ligne */
+/* Trouver moyen pour mettre les ombres sur chaque ligne, peut être en faisant un gradient par ligne et en les ombrant */
 .lines {
 	height: 100px;
 	background-image: linear-gradient(
