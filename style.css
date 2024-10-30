@@ -27,7 +27,7 @@ header > div > form {
 	justify-content: center;
 }
 
-header > div > a > img {
+header > div > a > picture > img {
 	height: 7em;
 	float: left;
 }
