@@ -168,3 +168,43 @@ main > img {
 	height: 2em;
 	filter: drop-shadow(0px 0px 5px rgb(0 0 0 / 0.4));
 }
+
+.search-icon {
+	display: none;
+}
+
+.burger {
+	display: none;
+}
+
+@media (max-width: 600px) {
+	header > nav {
+		display: none;
+	}
+
+	header > div > a {
+		background-color: green;
+		width: 30%;
+	}
+
+	header > div > form {
+		display: none;
+	}
+
+	header > div > a > picture > img {
+		width: 60%;
+		background-color: red;
+	}
+
+	.header-wrapper {
+		justify-content: space-between;
+	}
+
+	.search-icon {
+		display: block;
+	}
+
+	.burger {
+		display: block;
+	}
+}
