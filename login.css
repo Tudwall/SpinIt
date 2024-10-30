@@ -1,0 +1,34 @@
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+form {
+	width: 33%;
+	height: 50%;
+}
+
+fieldset {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	background-color: #ededed;
+	padding: 2em;
+	border-radius: 25px;
+}
+
+input[type="email"],
+input[type="text"] {
+	font-family: "Montserrat", serif;
+	border: none;
+	box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.24);
+	border-radius: 50px;
+	padding: 1em;
+	background-color: #d9d9d9;
+}
+
+fieldset > *:nth-child(3n) {
+	margin-bottom: 1em;
+}
