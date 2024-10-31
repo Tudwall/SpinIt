@@ -183,7 +183,6 @@ main > img {
 	}
 
 	header > div > a {
-		background-color: green;
 		width: 30%;
 	}
 
@@ -192,8 +191,7 @@ main > img {
 	}
 
 	header > div > a > picture > img {
-		width: 60%;
-		background-color: red;
+		transform: scale(75%);
 	}
 
 	.header-wrapper {
@@ -206,5 +204,7 @@ main > img {
 
 	.burger {
 		display: block;
+		width: 2.5em;
+		padding-left: 0.25em;
 	}
 }
