@@ -24,6 +24,9 @@ header {
 			width: 100%;
 			display: flex;
 			justify-content: center;
+			img {
+				height: 2em;
+			}
 			input[type="text"] {
 				font-family: $main-font;
 				border: none;
@@ -64,11 +67,6 @@ header {
 
 input[type="text"]:focus + #search-filters {
 	display: block;
-}
-
-/* Put in search bar */
-header > div > form > img {
-	height: 2em;
 }
 
 nav {

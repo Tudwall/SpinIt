@@ -28,6 +28,9 @@ header div form {
   display: flex;
   justify-content: center;
 }
+header div form img {
+  height: 2em;
+}
 header div form input[type=text] {
   font-family: "Montserrat", serif;
   border: none;
@@ -65,11 +68,6 @@ header div a > picture > img {
 
 input[type=text]:focus + #search-filters {
   display: block;
-}
-
-/* Put in search bar */
-header > div > form > img {
-  height: 2em;
 }
 
 nav {
