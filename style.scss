@@ -1,0 +1,203 @@
+@import "variables";
+
+body {
+	font-family: $main-font;
+}
+
+h1,
+h2,
+h3 {
+	font-family: $title1-3;
+}
+
+h4,
+h5 {
+	font-family: $title4-5;
+}
+
+header {
+	position: sticky;
+	background-color: $background-color;
+	z-index: 99;
+	div {
+		form {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			input[type="text"] {
+				font-family: $main-font;
+				border: none;
+				box-shadow: $inset-shadow;
+				width: 33%;
+				border-radius: 50px;
+				padding: 1%;
+				background-color: $accent-background-color;
+				position: relative;
+				display: inline-block;
+				&:focus {
+					outline: 0;
+				}
+			}
+			#search-filters {
+				display: none;
+				font-family: $main-font;
+				position: absolute;
+				background-color: $accent-background-color;
+				border: none;
+				box-shadow: $inset-shadow;
+				padding: 1%;
+				border-radius: 25px;
+				width: 28.5%;
+				top: 50%;
+				ul {
+					display: flex;
+					flex-direction: column;
+				}
+			}
+		}
+		a > picture > img {
+			height: 7em;
+			float: left;
+		}
+	}
+}
+
+input[type="text"]:focus + #search-filters {
+	display: block;
+}
+
+/* Put in search bar */
+header > div > form > img {
+	height: 2em;
+}
+
+nav {
+	font-family: $title1-3;
+	font-size: 1.25em;
+	height: 2em;
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100%;
+		padding-top: 0.25%;
+		li {
+			text-align: center;
+			list-style-type: none;
+			flex-grow: 1;
+			a {
+				color: $font-color;
+				text-decoration: none;
+				align-items: center;
+			}
+		}
+	}
+}
+
+main {
+	position: relative;
+	text-align: center;
+	div {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: rgba(255, 255, 255, 0.35);
+		backdrop-filter: blur(10px);
+		border-radius: 25px;
+		color: $background-color;
+		text-shadow: 0 4px 6px black;
+		font-size: 2em;
+		padding: 5%;
+	}
+	button {
+		position: absolute;
+		top: 55%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	img {
+		width: 100%;
+	}
+}
+
+/* Trouver moyen pour mettre les ombres sur chaque ligne, peut être en faisant un gradient par ligne et en les ombrant */
+.lines {
+	height: 100px;
+	background-image: linear-gradient(
+		to bottom,
+		$line-color-1,
+		$line-color-1 33%,
+		$line-color-2 33%,
+		$line-color-2 66%,
+		$line-color-3 66%,
+		$line-color-3 100%
+	);
+	background-size: 100% 100px;
+}
+
+.header-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 1%;
+}
+
+.shadow {
+	box-shadow: $box-shadow;
+}
+
+.menus {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+}
+
+.menu-icon {
+	height: 2em;
+	filter: drop-shadow($drop-shadow);
+}
+
+.search-icon {
+	display: none;
+}
+
+.burger {
+	display: none;
+}
+
+@media (max-width: 600px) {
+	header {
+		nav {
+			display: none;
+		}
+		div {
+			a {
+				width: 30%;
+				picture {
+					img {
+						transform: scale(75%);
+					}
+				}
+			}
+			form {
+				display: none;
+			}
+		}
+	}
+
+	.header-wrapper {
+		justify-content: space-between;
+	}
+
+	.search-icon {
+		display: block;
+	}
+
+	.burger {
+		display: block;
+		width: 2.5em;
+		padding-left: 0.25em;
+	}
+}
