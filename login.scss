@@ -1,0 +1,47 @@
+@import "variables";
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+form {
+	width: 33%;
+	height: 50%;
+}
+
+fieldset {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	background-color: $background-color;
+	padding: 2em;
+	border-radius: 25px;
+}
+
+input[type="email"],
+input[type="password"] {
+	font-family: $main-font;
+	border: none;
+	box-shadow: $inset-shadow;
+	border-radius: 50px;
+	padding: 1em;
+	background-color: $input-background-color;
+	width: 95%;
+	align-self: center;
+}
+
+input[type="email"]:focus {
+	outline: 0;
+}
+
+fieldset {
+	* {
+		padding: 0.2em;
+	}
+	*:nth-child(3n) {
+		margin-bottom: 1em;
+	}
+}

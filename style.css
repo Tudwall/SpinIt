@@ -1,209 +1,186 @@
-@import url("variables.css");
-
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* Fonts */
+/* Colors */
+/* Shadows */
 body {
-	font-family: var(--main-font);
+  font-family: "Montserrat", serif;
 }
+
 h1,
 h2,
 h3 {
-	font-family: var(--title1-3);
+  font-family: "Fira Sans", serif;
 }
 
 h4,
 h5 {
-	font-family: var(--title4-5);
+  font-family: "Cardo", serif;
 }
 
 header {
-	position: sticky;
-	background-color: var(--background-color);
-	z-index: 99;
+  position: sticky;
+  background-color: #ededed;
+  z-index: 99;
+}
+header div form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header div form img {
+  height: 2em;
+}
+header div form input[type=text] {
+  font-family: "Montserrat", serif;
+  border: none;
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.24);
+  width: 33%;
+  border-radius: 50px;
+  padding: 1%;
+  background-color: #fbe6bd;
+  position: relative;
+  display: inline-block;
+}
+header div form input[type=text]:focus {
+  outline: 0;
+}
+header div form #search-filters {
+  display: none;
+  font-family: "Montserrat", serif;
+  position: absolute;
+  background-color: #fbe6bd;
+  border: none;
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.24);
+  padding: 1%;
+  border-radius: 25px;
+  width: 28.5%;
+  top: 50%;
+}
+header div form #search-filters ul {
+  display: flex;
+  flex-direction: column;
+}
+header div a > picture > img {
+  height: 7em;
+  float: left;
 }
 
-header > div > form {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-}
-
-header > div > a > picture > img {
-	height: 7em;
-	float: left;
-}
-
-header > div > form > input[type="text"] {
-	font-family: var(--main-font);
-	border: none;
-	box-shadow: var(--inset-shadow);
-	width: 33%;
-	border-radius: 50px;
-	padding: 1%;
-	background-color: var(--accent-background-color);
-	position: relative;
-	display: inline-block;
-}
-
-#search-filters {
-	display: none;
-	font-family: var(--main-font);
-	position: absolute;
-	background-color: var(--accent-background-color);
-	border: none;
-	box-shadow: var(--inset-shadow);
-	padding: 1%;
-	border-radius: 25px;
-	width: 28.5%;
-	top: 50%;
-}
-
-#search-filters > ul {
-	display: flex;
-	flex-direction: column;
-}
-
-input[type="text"]:focus {
-	outline: 0;
-}
-
-input[type="text"]:focus + #search-filters {
-	display: block;
-}
-
-/* Put in search bar */
-header > div > form > img {
-	height: 2em;
+input[type=text]:focus + #search-filters {
+  display: block;
 }
 
 nav {
-	font-family: var(--title1-3);
-	font-size: 1.25em;
-	height: 2em;
+  font-family: "Fira Sans", serif;
+  font-size: 1.25em;
+  height: 2em;
 }
-
-nav > ul {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	height: 100%;
-	padding-top: 0.25%;
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  padding-top: 0.25%;
 }
-
-nav > ul > li {
-	text-align: center;
-	list-style-type: none;
-	flex-grow: 1;
+nav ul li {
+  text-align: center;
+  list-style-type: none;
+  flex-grow: 1;
 }
-
-nav > ul > li > a {
-	color: var(--font-color);
-	text-decoration: none;
-	align-items: center;
+nav ul li a {
+  color: #474747;
+  text-decoration: none;
+  align-items: center;
 }
 
 main {
-	position: relative;
-	text-align: center;
+  position: relative;
+  text-align: center;
 }
-
-main > div {
-	position: absolute;
-	top: 30%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: rgba(255, 255, 255, 0.35);
-	backdrop-filter: blur(10px);
-	border-radius: 25px;
-	color: var(--background-color);
-	text-shadow: 0 4px 6px black;
-	font-size: 2em;
-	padding: 5%;
+main div {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 25px;
+  color: #ededed;
+  text-shadow: 0 4px 6px black;
+  font-size: 2em;
+  padding: 5%;
 }
-
-main > button {
-	position: absolute;
-	top: 55%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+main button {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-main > img {
-	width: 100%;
+main img {
+  width: 100%;
 }
 
 /* Trouver moyen pour mettre les ombres sur chaque ligne, peut être en faisant un gradient par ligne et en les ombrant */
 .lines {
-	height: 100px;
-	background-image: linear-gradient(
-		to bottom,
-		var(--line-color-1),
-		var(--line-color-1) 33%,
-		var(--line-color-2) 33%,
-		var(--line-color-2) 66%,
-		var(--line-color-3) 66%,
-		var(--line-color-3) 100%
-	);
-	background-size: 100% 100px;
+  height: 100px;
+  background-image: linear-gradient(to bottom, #f2af26, #f2af26 33%, #ad343e 33%, #ad343e 66%, #3f88c5 66%, #3f88c5 100%);
+  background-size: 100% 100px;
 }
 
 .header-wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-right: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1%;
 }
 
 .shadow {
-	box-shadow: var(--box-shadow);
+  box-shadow: 0 2px 10px black;
 }
 
 .menus {
-	display: flex;
-	flex-direction: row;
-	gap: 1em;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 }
 
 .menu-icon {
-	height: 2em;
-	filter: drop-shadow(var(--drop-shadow));
+  height: 2em;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.4));
 }
 
 .search-icon {
-	display: none;
+  display: none;
 }
 
 .burger {
-	display: none;
+  display: none;
 }
 
 @media (max-width: 600px) {
-	header > nav {
-		display: none;
-	}
-
-	header > div > a {
-		width: 30%;
-	}
-
-	header > div > form {
-		display: none;
-	}
-
-	header > div > a > picture > img {
-		transform: scale(75%);
-	}
-
-	.header-wrapper {
-		justify-content: space-between;
-	}
-
-	.search-icon {
-		display: block;
-	}
-
-	.burger {
-		display: block;
-		width: 2.5em;
-		padding-left: 0.25em;
-	}
-}
+  header nav {
+    display: none;
+  }
+  header div a {
+    width: 30%;
+  }
+  header div a picture img {
+    transform: scale(75%);
+  }
+  header div form {
+    display: none;
+  }
+  .header-wrapper {
+    justify-content: space-between;
+  }
+  .search-icon {
+    display: block;
+  }
+  .burger {
+    display: block;
+    width: 2.5em;
+    padding-left: 0.25em;
+  }
+}/*# sourceMappingURL=style.css.map */
