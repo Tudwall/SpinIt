@@ -84,6 +84,15 @@
 		<main class="shadow">
 			<form>
 				<fieldset class="shadow">
+					<label for="pseudo">Pseudo:</label>
+					<input
+						type="text"
+						id="username"
+						name="username"
+						placeholder="pseudonyme"
+						required
+						aria-required="true"
+					/>
 					<label for="email">Adresse email:</label>
 					<input
 						type="email"
@@ -92,9 +101,7 @@
 						placeholder="exemple@exemple.fr"
 						required
 						aria-required="true"
-						aria-describedby="email-desc"
 					/>
-					<span id="email-desc">Entrez votre adresse email</span>
 
 					<label for="password">Mot de passe:</label>
 					<input
@@ -104,9 +111,16 @@
 						placeholder="motdepasse"
 						required
 						aria-required="true"
-						aria-describedby="password-desc"
 					/>
-					<span id="password-desc">Entrez votre mot de passe</span>
+					<label for="confirm-password">Confirmez votre mot de passe:</label>
+					<input
+						type="password"
+						id="confirm-password"
+						name="confirm-password"
+						placeholder="motdepasse"
+						required
+						aria-required="true"
+					/>
 					<button type="submit">Connexion</button>
 				</fieldset>
 			</form>
