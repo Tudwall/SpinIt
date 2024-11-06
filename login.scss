@@ -1,5 +1,7 @@
 @import "variables";
 @import "mixins";
+@import url(css-reset.css);
+@import url(style.css);
 
 main {
 	display: flex;
@@ -23,9 +25,7 @@ fieldset {
 	* {
 		padding: 0.2em;
 	}
-	*:nth-child(3n) {
-		margin-bottom: 1em;
-	}
+	input[type="text"],
 	input[type="email"],
 	input[type="password"] {
 		font-family: $main-font;
@@ -36,6 +36,7 @@ fieldset {
 		background-color: $input-background-color;
 		width: 95%;
 		align-self: center;
+		margin-bottom: 1em;
 	}
 	input[type="email"]:focus {
 		outline: 0;
@@ -45,6 +46,7 @@ fieldset {
 		align-self: center;
 		padding-left: 15%;
 		padding-right: 15%;
+		margin-top: 2em;
 	}
 	#password-desc {
 		margin-bottom: 15%;
