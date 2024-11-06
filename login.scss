@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 main {
 	display: flex;
@@ -19,29 +20,33 @@ fieldset {
 	background-color: $background-color;
 	padding: 2em;
 	border-radius: 25px;
-}
-
-input[type="email"],
-input[type="password"] {
-	font-family: $main-font;
-	border: none;
-	box-shadow: $inset-shadow;
-	border-radius: 50px;
-	padding: 1em;
-	background-color: $input-background-color;
-	width: 95%;
-	align-self: center;
-}
-
-input[type="email"]:focus {
-	outline: 0;
-}
-
-fieldset {
 	* {
 		padding: 0.2em;
 	}
 	*:nth-child(3n) {
 		margin-bottom: 1em;
+	}
+	input[type="email"],
+	input[type="password"] {
+		font-family: $main-font;
+		border: none;
+		box-shadow: $inset-shadow;
+		border-radius: 50px;
+		padding: 1em;
+		background-color: $input-background-color;
+		width: 95%;
+		align-self: center;
+	}
+	input[type="email"]:focus {
+		outline: 0;
+	}
+	button {
+		@include button;
+		align-self: center;
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+	#password-desc {
+		margin-bottom: 15%;
 	}
 }

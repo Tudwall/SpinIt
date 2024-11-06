@@ -110,11 +110,12 @@ main {
 		font-size: 2em;
 		padding: 5%;
 	}
-	button {
+	.cta {
 		@include button;
 		position: absolute;
 		top: 55%;
 		left: 42.5%;
+		width: 15%;
 	}
 	img {
 		width: 100%;
