@@ -4,6 +4,10 @@
 main {
 	background-color: $background-color;
 	box-shadow: $box-shadow;
+	section {
+		box-shadow: $box-shadow;
+		padding-bottom: 1em;
+	}
 	h2 {
 		font-size: 1.25em;
 		padding-top: 1em;
