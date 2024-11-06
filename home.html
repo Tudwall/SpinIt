@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="home.css" />
+		<title>SpinIt!</title>
+	</head>
+
+	<body>
+		<header class="shadow">
+			<div class="shadow header-wrapper">
+				<img src="icons/Burger.svg" class="menu-icon burger" />
+				<a href="index.html" aria-label="Accueil" class="logo"
+					><picture>
+						<source
+							srcset="/icons/SpinIn-Mobile.svg"
+							media="(max-width:600px)"
+						/>
+						<img src="/icons/SpintIt-lineson.svg" alt="Logo de SpinIt!" />
+					</picture>
+				</a>
+
+				<form>
+					<input
+						type="text"
+						placeholder="recherche..."
+						name="search"
+						aria-label="Barre de recherche"
+					/>
+					<div id="search-filters">
+						<ul>
+							<li>
+								<input
+									type="checkbox"
+									id="artists"
+									name="artists"
+									value="artists"
+								/><label for="artists">Artistes</label>
+							</li>
+							<li>
+								<input
+									type="checkbox"
+									id="albums"
+									name="albums"
+									value="albums"
+								/><label for="albums">Albums</label>
+							</li>
+							<li>
+								<input
+									type="checkbox"
+									id="songs"
+									name="songs"
+									value="songs"
+								/><label for="songs">Morceaux</label>
+							</li>
+						</ul>
+					</div>
+				</form>
+
+				<div class="menus">
+					<img
+						src="icons/Magnifier.svg"
+						aria-label="Barre de recherche"
+						class="menu-icon search-icon"
+					/>
+					<a
+						href="#"
+						class="notification-menu"
+						aria-label="Menu des notifications"
+						><img src="/icons/Notification-bell.svg" class="menu-icon"
+					/></a>
+					<a href="login.html" class="account-menu" aria-label="Menu du compte"
+						><img src="/icons/User.svg" class="menu-icon"
+					/></a>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#">Populaires</a></li>
+					<li><a href="#">Récent</a></li>
+					<li><a href="#">Artistes</a></li>
+					<li><a href="#">Albums</a></li>
+					<li><a href="#">Communauté</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main></main>
+
+		<footer>
+			<div class="lines"></div>
+		</footer>
+	</body>
+</html>
