@@ -42,6 +42,9 @@ header {
 				&:focus {
 					outline: 0;
 				}
+				&:focus + #search-filters {
+					display: block;
+				}
 			}
 			#search-filters {
 				display: none;
@@ -67,10 +70,6 @@ header {
 	}
 }
 
-input[type="text"]:focus + #search-filters {
-	display: block;
-}
-
 nav {
 	font-family: $title1-3;
 	font-size: 1.25em;
@@ -92,34 +91,6 @@ nav {
 				align-items: center;
 			}
 		}
-	}
-}
-
-main {
-	position: relative;
-	text-align: center;
-	div {
-		position: absolute;
-		top: 30%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		background-color: rgba(255, 255, 255, 0.35);
-		backdrop-filter: blur(10px);
-		border-radius: 25px;
-		color: $background-color;
-		text-shadow: 0 4px 6px black;
-		font-size: 2em;
-		padding: 5%;
-	}
-	.cta {
-		@include button;
-		position: absolute;
-		top: 55%;
-		left: 42.5%;
-		width: 15%;
-	}
-	img {
-		width: 100%;
 	}
 }
 
