@@ -1,7 +1,5 @@
-@import "variables";
 @import "mixins";
-@import url(css-reset.css);
-@import url(style.css);
+@import "style";
 
 main {
 	display: flex;

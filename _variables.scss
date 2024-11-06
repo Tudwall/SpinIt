@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-/* Fonts */
+// Fonts
 $main-font: "Montserrat", serif;
 $title1-3: "Fira Sans", serif;
 $title4-5: "Cardo", serif;
 
-/* Colors */
+// Colors
 $background-color: #ededed;
 $accent-background-color: #fbe6bd;
 $input-background-color: #d9d9d9;
@@ -14,7 +12,7 @@ $line-color-1: #f2af26;
 $line-color-2: #ad343e;
 $line-color-3: #3f88c5;
 
-/* Shadows */
+// Shadows
 $box-shadow: 4px 4px 10px #00000040;
 $inset-shadow: inset 2.75px 2.75px 7px #00000040;
 $drop-shadow: 4px 4px 10px #00000040;
