@@ -5,6 +5,27 @@
 main {
 	display: flex;
 	flex-direction: column;
+	a {
+		text-decoration: none;
+		color: $font-color;
+	}
+	section {
+		box-shadow: $box-shadow;
+		padding-bottom: 0.5em;
+		.section-title {
+			padding-left: 1em;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding-top: 1em;
+			padding-right: 1em;
+			.displays {
+				display: flex;
+				gap: 0.5em;
+			}
+		}
+	}
 	.intro {
 		display: flex;
 		flex-direction: row;
@@ -19,6 +40,28 @@ main {
 			gap: 1em;
 			p {
 				max-width: 40%;
+			}
+		}
+	}
+	.collection {
+		.collection-wrapper {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 1em;
+			.element {
+				@include card;
+			}
+		}
+	}
+	.wishlist {
+		.wishlist-wrapper {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 1em;
+			.element {
+				@include card;
 			}
 		}
 	}
