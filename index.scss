@@ -32,43 +32,7 @@ main {
 	}
 }
 
-@media (max-width: 600px) {
-	body {
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-	}
-
-	header {
-		nav {
-			display: none;
-		}
-		div {
-			justify-content: space-between;
-			a {
-				width: 30%;
-				picture {
-					img {
-						// transform: scale(75%);
-					}
-				}
-			}
-			form {
-				display: none;
-			}
-		}
-	}
-
-	.search-icon {
-		display: block;
-	}
-
-	.burger {
-		display: block;
-		width: 2.5em;
-		padding-left: 0.25em;
-	}
-
+@media screen and (max-width: 600px) {
 	main {
 		background-color: $background-color;
 		img {

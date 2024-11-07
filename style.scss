@@ -137,3 +137,50 @@ nav {
 .burger {
 	display: none;
 }
+
+@media screen and (max-width: 600px) {
+	body {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	header {
+		nav {
+			display: none;
+		}
+		.header-wrapper {
+			display: flex;
+			justify-content: space-between;
+			float: none;
+
+			a {
+				width: 30%;
+				picture {
+					img {
+						height: auto;
+					}
+				}
+			}
+			form {
+				display: none;
+			}
+		}
+	}
+
+	.search-icon {
+		display: block;
+		padding-right: 0.25em;
+	}
+
+	.notification-menu,
+	.account-menu {
+		display: none;
+	}
+
+	.burger {
+		display: block;
+		width: 2.5em;
+		padding-left: 0.25em;
+	}
+}
