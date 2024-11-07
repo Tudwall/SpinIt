@@ -1,4 +1,4 @@
-![Logo de Spin It](./icons/SpintIt-lineson.svg "logo de SpinIt!")
+![Logo de Spin It](./assets/icons/SpintIt-lineson.svg "logo de SpinIt!")
 
 #### ATTRIBUTIONS
 
