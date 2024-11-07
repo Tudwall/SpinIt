@@ -1,9 +1,13 @@
 @import "style";
 
+body {
+	height: 100vh;
+}
+
 main {
 	position: relative;
 	text-align: center;
-	div {
+	p {
 		position: absolute;
 		top: 30%;
 		left: 50%;
@@ -29,16 +33,23 @@ main {
 }
 
 @media (max-width: 600px) {
+	body {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
 	header {
 		nav {
 			display: none;
 		}
 		div {
+			justify-content: space-between;
 			a {
 				width: 30%;
 				picture {
 					img {
-						transform: scale(75%);
+						// transform: scale(75%);
 					}
 				}
 			}
@@ -46,10 +57,6 @@ main {
 				display: none;
 			}
 		}
-	}
-
-	.header-wrapper {
-		justify-content: space-between;
 	}
 
 	.search-icon {
@@ -60,5 +67,22 @@ main {
 		display: block;
 		width: 2.5em;
 		padding-left: 0.25em;
+	}
+
+	main {
+		background-color: $background-color;
+		img {
+			display: none;
+		}
+		p {
+			position: static;
+			transform: none;
+			background-color: transparent;
+		}
+		.cta {
+			position: static;
+			width: auto;
+		}
+		padding-bottom: 1em;
 	}
 }
