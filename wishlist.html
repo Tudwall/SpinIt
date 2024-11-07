@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="login.css" />
-		<title>SpinIt! - Inscription</title>
+		<link rel="stylesheet" href="collection.css" />
+		<title>SpinIt! - Liste de souhait</title>
 	</head>
+
 	<body>
 		<header class="shadow">
 			<div class="shadow header-wrapper">
+				<img src="icons/Burger.svg" class="menu-icon burger" />
 				<a href="index.html" aria-label="Accueil" class="logo"
 					><picture>
 						<source
 							srcset="/icons/SpinIn-Mobile.svg"
 							media="(max-width:600px)"
 						/>
-						<img
-							src="/icons/SpintIt-lineson.svg"
-							alt="Logo de SpinIt!"
-						/> </picture
-				></a>
+						<img src="/icons/SpintIt-lineson.svg" alt="Logo de SpinIt!" />
+					</picture>
+				</a>
 
 				<form>
 					<input
@@ -59,6 +59,11 @@
 				</form>
 
 				<div class="menus">
+					<img
+						src="icons/Magnifier.svg"
+						aria-label="Barre de recherche"
+						class="menu-icon search-icon"
+					/>
 					<a
 						href="#"
 						class="notification-menu"
@@ -81,49 +86,48 @@
 			</nav>
 		</header>
 
-		<main class="shadow">
-			<form>
-				<fieldset class="shadow">
-					<label for="pseudo">Pseudo:</label>
-					<input
-						type="text"
-						id="username"
-						name="username"
-						placeholder="pseudonyme"
-						required
-						aria-required="true"
-					/>
-					<label for="email">Adresse email:</label>
-					<input
-						type="email"
-						id="email"
-						name="email"
-						placeholder="exemple@exemple.fr"
-						required
-						aria-required="true"
-					/>
-
-					<label for="password">Mot de passe:</label>
-					<input
-						type="password"
-						id="password"
-						name="password"
-						placeholder="motdepasse"
-						required
-						aria-required="true"
-					/>
-					<label for="confirm-password">Confirmez votre mot de passe:</label>
-					<input
-						type="password"
-						id="confirm-password"
-						name="confirm-password"
-						placeholder="motdepasse"
-						required
-						aria-required="true"
-					/>
-					<button type="submit">Connexion</button>
-				</fieldset>
-			</form>
+		<main>
+			<h2>Liste de souhaits</h2>
+			<section>
+				<div class="collection-filters">
+					<span>Artists</span>
+					<span>Album</span>
+					<span>Date</span>
+					<span>Date d'ajout</span>
+					<span>Note</span>
+					<div>
+						<img src="icons/Grid.svg" />
+						<img src="icons/List.svg" />
+					</div>
+				</div>
+				<div class="collection-wrapper">
+					<div class="element">
+						<img class="cover-art" src="icons/Record.svg" alt="" />
+						<div class="info">
+							<span class="artist">Artist</span>
+							<span class="album">Album</span>
+							<span class="date">(Date)</span>
+						</div>
+						<div class="actions">
+							<div class="stars">
+								<img src="icons/Star-fill.svg" />
+								<img src="icons/Star-fill.svg" />
+								<img src="icons/Star-fill.svg" />
+								<img src="icons/Star-fill.svg" />
+								<img src="icons/Star-outline.svg" />
+							</div>
+							<div>
+								<img class="add-collection" src="icons/Add.svg" alt="" />
+								<img
+									class="remove-wishlist"
+									src="icons/Heart-outline.svg"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 
 		<footer>
