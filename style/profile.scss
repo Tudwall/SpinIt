@@ -1,0 +1,25 @@
+@import "variables";
+@import "mixins";
+@import "style";
+
+main {
+	display: flex;
+	flex-direction: column;
+	.intro {
+		display: flex;
+		flex-direction: row;
+		gap: 2em;
+		padding: 2em;
+		img {
+			border-radius: 25px;
+		}
+		.bio {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			p {
+				max-width: 40%;
+			}
+		}
+	}
+}
