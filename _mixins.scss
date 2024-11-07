@@ -19,3 +19,76 @@
 		transform: scale(0.9);
 	}
 }
+
+@mixin card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-basis: 12.5%;
+	background-color: $card-background-color;
+	border-radius: 25px;
+	box-shadow: $box-shadow;
+	.cover-art {
+		background-color: $input-background-color;
+		border-top-right-radius: 25px;
+		border-top-left-radius: 25px;
+		margin-bottom: 1em;
+	}
+	.info {
+		margin-bottom: 2em;
+		padding-right: 0.25em;
+		padding-left: 0.25em;
+	}
+	.actions {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 0.5em;
+	}
+	.stars {
+		filter: drop-shadow($drop-shadow);
+	}
+	.add-collection {
+		@extend .stars;
+		width: 1em;
+	}
+	.add-wishlist {
+		@extend .add-collection;
+		margin-right: 0.5em;
+	}
+}
+
+@mixin list {
+	display: flex;
+	flex-direction: row;
+	flex-basis: auto;
+	background-color: $input-background-color;
+	border-radius: 10px;
+	.cover-art {
+		background-color: $input-background-color;
+		height: 2em;
+		margin: 0;
+	}
+	.info {
+		display: flex;
+		flex-direction: row;
+		padding-right: 0.25em;
+		padding-left: 0.25em;
+		margin: 0;
+	}
+	.actions {
+		display: flex;
+		justify-content: space-around;
+		margin: 0;
+	}
+	.stars {
+		filter: drop-shadow($drop-shadow);
+	}
+	.add-collection {
+		@extend .stars;
+	}
+	.add-wishlist {
+		@extend .stars;
+		margin: 0;
+		padding-right: 0.2em;
+	}
+}

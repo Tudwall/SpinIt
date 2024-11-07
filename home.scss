@@ -6,6 +6,7 @@ main {
 	flex-direction: column;
 	background-color: $background-color;
 	box-shadow: $box-shadow;
+	z-index: 3;
 	section {
 		box-shadow: $box-shadow;
 		padding-bottom: 1em;
@@ -35,43 +36,20 @@ main {
 		padding-left: 2em;
 		padding-right: 2em;
 		.card {
-			display: flex;
-			flex-direction: column;
-			flex-basis: 12.5%;
-			background-color: $card-background-color;
-			border-radius: 25px;
-			box-shadow: $box-shadow;
-			.cover-art {
-				background-color: $input-background-color;
-				border-top-right-radius: 25px;
-				border-top-left-radius: 25px;
-				margin-bottom: 1em;
-			}
-			.info {
-				margin-bottom: 2em;
-				padding-right: 0.25em;
-				padding-left: 0.25em;
-			}
-			.actions {
-				display: flex;
-				justify-content: space-around;
-				margin-bottom: 0.5em;
-			}
-			.stars {
-				filter: drop-shadow($drop-shadow);
-			}
-			.add-collection {
-				@extend .stars;
-				width: 1em;
-			}
-			.add-wishlist {
-				@extend .add-collection;
-				margin-right: 0.5em;
-			}
+			@include card;
 		}
 	}
 }
 
-footer {
-	z-index: 1;
+@media screen and (max-width: 600px) {
+	main {
+		.card-container {
+			flex-direction: column;
+			gap: 0.2em;
+			padding: 0;
+			.card {
+				@include list;
+			}
+		}
+	}
 }

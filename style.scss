@@ -138,6 +138,10 @@ nav {
 	display: none;
 }
 
+footer {
+	z-index: 1;
+}
+
 @media screen and (max-width: 600px) {
 	body {
 		height: 100vh;
