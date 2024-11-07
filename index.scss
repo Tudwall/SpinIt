@@ -1,9 +1,13 @@
 @import "style";
 
+body {
+	height: 100vh;
+}
+
 main {
 	position: relative;
 	text-align: center;
-	div {
+	p {
 		position: absolute;
 		top: 30%;
 		left: 50%;
@@ -25,5 +29,24 @@ main {
 	}
 	img {
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	main {
+		background-color: $background-color;
+		img {
+			display: none;
+		}
+		p {
+			position: static;
+			transform: none;
+			background-color: transparent;
+		}
+		.cta {
+			position: static;
+			width: auto;
+		}
+		padding-bottom: 1em;
 	}
 }

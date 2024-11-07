@@ -18,7 +18,6 @@ h5 {
 }
 
 header {
-	position: sticky;
 	background-color: $background-color;
 	z-index: 99;
 	div {
@@ -139,17 +138,31 @@ nav {
 	display: none;
 }
 
-@media (max-width: 600px) {
+footer {
+	z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
 	header {
 		nav {
 			display: none;
 		}
-		div {
+		.header-wrapper {
+			display: flex;
+			justify-content: space-between;
+			float: none;
+
 			a {
 				width: 30%;
 				picture {
 					img {
-						transform: scale(75%);
+						height: auto;
 					}
 				}
 			}
@@ -159,17 +172,18 @@ nav {
 		}
 	}
 
-	.header-wrapper {
-		justify-content: space-between;
-	}
-
 	.search-icon {
 		display: block;
+		padding-right: 0.25em;
+	}
+
+	.notification-menu,
+	.account-menu {
+		display: none;
 	}
 
 	.burger {
 		display: block;
-		width: 2.5em;
 		padding-left: 0.25em;
 	}
 }
