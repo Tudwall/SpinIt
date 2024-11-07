@@ -57,12 +57,11 @@ main {
 				filter: drop-shadow($drop-shadow);
 			}
 			.add-collection {
-				filter: drop-shadow($drop-shadow);
+				@extend .stars;
 				width: 1em;
 			}
 			.add-wishlist {
-				filter: drop-shadow($drop-shadow);
-				width: 1em;
+				@extend .add-collection;
 				margin-right: 0.5em;
 			}
 		}
