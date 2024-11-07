@@ -2,11 +2,19 @@
 @import "style";
 
 main {
+	display: flex;
+	flex-direction: column;
 	background-color: $background-color;
 	box-shadow: $box-shadow;
 	section {
 		box-shadow: $box-shadow;
 		padding-bottom: 1em;
+	}
+	section:nth-child(1) {
+		z-index: 2;
+	}
+	section:nth-child(2) {
+		z-index: 1;
 	}
 	h2 {
 		font-size: 1.25em;
@@ -25,17 +33,20 @@ main {
 		.card {
 			display: flex;
 			flex-direction: column;
-			background-color: $input-background-color;
+			flex-basis: 12.5%;
+			background-color: $card-background-color;
 			border-radius: 25px;
 			box-shadow: $box-shadow;
 			.cover-art {
-				background-color: $background-color;
+				background-color: $input-background-color;
 				border-top-right-radius: 25px;
 				border-top-left-radius: 25px;
 				margin-bottom: 1em;
 			}
 			.info {
 				margin-bottom: 2em;
+				padding-right: 0.25em;
+				padding-left: 0.25em;
 			}
 			.actions {
 				display: flex;
@@ -56,4 +67,8 @@ main {
 			}
 		}
 	}
+}
+
+footer {
+	z-index: 1;
 }
