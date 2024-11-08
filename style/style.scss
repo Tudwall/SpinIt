@@ -94,6 +94,13 @@ nav {
 		}
 	}
 }
+main {
+	section {
+		padding-left: 1em;
+		box-shadow: $box-shadow;
+		padding-bottom: 1em;
+	}
+}
 
 /* Trouver moyen pour mettre les ombres sur chaque ligne, peut être en faisant un gradient par ligne et en les ombrant */
 .lines {
