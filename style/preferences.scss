@@ -1,0 +1,81 @@
+@import "style";
+@import "mixins";
+@import "variables";
+
+main {
+	display: flex;
+	flex-direction: column;
+	h2 {
+		padding: 1em;
+		text-align: center;
+		font-size: 1.2em;
+	}
+	.preferences-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+		.avatar-wrapper {
+			display: flex;
+			flex-direction: row;
+			width: fit-content;
+			gap: 1em;
+			img {
+				border-radius: 25px;
+			}
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 0.25em;
+			}
+		}
+	}
+	.bio-wrapper {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 1em;
+		width: fit-content;
+		textarea {
+			font-family: $main-font;
+			color: $font-color;
+			padding: 0.5em;
+			border: none;
+			border-radius: 25px;
+			box-shadow: $inset-shadow;
+			background-color: $accent-background-color;
+			width: 60em;
+		}
+	}
+
+	.dangerous {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+		padding: 3em;
+		button {
+			@include button;
+		}
+		#delete-account {
+			background-color: #e6c0c3;
+		}
+		#data-claim {
+			background-color: $accent-background-color;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	main {
+		.preferences-wrapper {
+			.avatar-wrapper,
+			.bio-wrapper {
+				flex-direction: column;
+				align-items: center;
+				textarea {
+					width: fit-content;
+				}
+			}
+		}
+	}
+}
