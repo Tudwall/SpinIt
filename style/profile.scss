@@ -66,3 +66,21 @@ main {
 		}
 	}
 }
+
+@media screen and (max-width: 600px) {
+	main {
+		.intro {
+			width: fit-content;
+			flex-direction: column;
+			img {
+				width: fit-content;
+			}
+			.bio {
+				width: fit-content;
+				p {
+					max-width: fit-content;
+				}
+			}
+		}
+	}
+}
