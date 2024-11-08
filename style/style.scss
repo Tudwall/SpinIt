@@ -103,20 +103,17 @@ main {
 }
 
 /* Trouver moyen pour mettre les ombres sur chaque ligne, peut être en faisant un gradient par ligne et en les ombrant */
-.lines {
-	height: 100px;
-	background-image: linear-gradient(
-		to bottom,
-		$line-color-1,
-		$line-color-1 33%,
-		$line-color-2 33%,
-		$line-color-2 66%,
-		$line-color-3 66%,
-		$line-color-3 100%
-	);
-	background-size: 100% 100px;
+.yellow {
+	@include line($line-color-1);
 }
 
+.red {
+	@include line($line-color-2);
+}
+
+.blue {
+	@include line($line-color-3);
+}
 .header-wrapper {
 	display: flex;
 	align-items: center;

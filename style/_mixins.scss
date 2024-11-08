@@ -93,3 +93,10 @@
 		padding-right: 0.2em;
 	}
 }
+
+@mixin line($color) {
+	height: 100px;
+	background-image: linear-gradient(to bottom, $color, $color 100%);
+	box-shadow: $box-shadow;
+	background-size: 100% 100px;
+}
