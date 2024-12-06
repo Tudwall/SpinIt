@@ -1,0 +1,8 @@
+@import "style";
+@import "home";
+@import "mixins";
+@import "variables";
+
+.card {
+	@include card;
+}
