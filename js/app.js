@@ -63,7 +63,7 @@ const createCard = async (url) => {
 		albumEl.textContent = element.title;
 		const dateEl = document.createElement("span");
 		dateEl.classList.add("date");
-		dateEl.textContent = element.year;
+		dateEl.textContent = element.year; // A fix: doit être une string
 
 		infoEl.appendChild(artistEl, albumEl, dateEl);
 
@@ -88,7 +88,8 @@ const createCard = async (url) => {
 		addEl.appendChild(addCollec, addWish);
 
 		card.appendChild(infoEl, actionsEl);
-		document.getElementById("card-container").appendChild(card);
+		const container = document.getElementById("card-container");
+		container.appendChild(card);
 	});
 };
 
