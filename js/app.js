@@ -65,7 +65,10 @@ const createCard = async (url) => {
 		dateEl.classList.add("date");
 		dateEl.textContent = element.year; // A fix: doit être une string
 
-		infoEl.appendChild(artistEl, albumEl, dateEl);
+		infoEl.appendChild(imageEl);
+		infoEl.appendChild(artistEl);
+		infoEl.appendChild(albumEl);
+		infoEl.appendChild(dateEl);
 
 		const actionsEl = document.createElement("div");
 		actionsEl.classList.add("actions");
@@ -85,9 +88,12 @@ const createCard = async (url) => {
 		const addWish = document.createElement("img");
 		addWish.setAttribute("src", "assets/icons/Heart-outline.svg");
 		addWish.classList.add("add-wishlist");
-		addEl.appendChild(addCollec, addWish);
+		addEl.appendChild(addCollec);
+		addEl.appendChild(addWish);
+		actionsEl.appendChild(addEl);
 
-		card.appendChild(infoEl, actionsEl);
+		card.appendChild(infoEl);
+		card.appendChild(actionsEl);
 		const container = document.getElementById("card-container");
 		container.appendChild(card);
 	});
