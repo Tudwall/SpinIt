@@ -1,33 +1,32 @@
 /* 
 Objet retourné:
 {
-	{
-	pagination:
-    	page: nb de pages demandées,
-    	pages: nb de pages total,
-    	per_page: nb d'éléments demandés par page,
-    	items: nb d'items au total  ,
-    	url: {
-        	last: lien de la dernière page,
-        	next: lien de la prochaine page
-    	}  
-	},
-	releases: [
-    	{
-        	id: id de l'item,
-        	status:,
-        	type: si c'est une release,
-        	format: nb de morceaux,
-        	label: label,
-        	title: titre de l'album,
-        	resource_url: lien vers l'album,
-        	role:,
-        	artist: nom de l'artiste,
-        	year: année de sortie,
-        	thumb: thumbnail?, 
-        	stats: [Object]
-    	}
-	]
+  pagination: {
+    page: 1,
+    pages: 129,
+    per_page: 1,
+    items: 129,
+    urls: {
+      last: 'https://api.discogs.com/artists/1/releases?page=129&per_page=1',
+      next: 'https://api.discogs.com/artists/1/releases?page=2&per_page=1'
+    }
+  },
+  releases: [
+    {
+      id: 20209,
+      status: 'Accepted',
+      type: 'release',
+      format: '10"',
+      label: 'Svek',
+      title: 'Kaos',
+      resource_url: 'https://api.discogs.com/releases/20209',
+      role: 'Main',
+      artist: 'Stephan-G* & The Persuader',
+      year: 1997,
+      thumb: '',
+      stats: [Object]
+    }
+  ]
 }
 */
 
