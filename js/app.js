@@ -1,49 +1,45 @@
 /* 
 Objet retourné:
 {
-{
-pagination:
-    page: nb de pages demandées,
-    pages: nb de pages total,
-    per_page: nb d'éléments demandés par page,
-    items: nb d'items au total  ,
-    url: {
-        last: lien de la dernière page,
-        next: lien de la prochaine page
-    }  
-},
-releases: [
-    {
-        id: id de l'item,
-        status:,
-        type: si c'est une release,
-        format: nb de morceaux,
-        label: label,
-        title: titre de l'album,
-        resource_url: lien vers l'album,
-        role:,
-        artist: nom de l'artiste,
-        year: année de sortie,
-        thumb: thumbnail?, 
-        stats: [Object]
-    }
-]
+	{
+	pagination:
+    	page: nb de pages demandées,
+    	pages: nb de pages total,
+    	per_page: nb d'éléments demandés par page,
+    	items: nb d'items au total  ,
+    	url: {
+        	last: lien de la dernière page,
+        	next: lien de la prochaine page
+    	}  
+	},
+	releases: [
+    	{
+        	id: id de l'item,
+        	status:,
+        	type: si c'est une release,
+        	format: nb de morceaux,
+        	label: label,
+        	title: titre de l'album,
+        	resource_url: lien vers l'album,
+        	role:,
+        	artist: nom de l'artiste,
+        	year: année de sortie,
+        	thumb: thumbnail?, 
+        	stats: [Object]
+    	}
+	]
 }
 */
 
 const APICall = async (url) => {
 	let data = await fetch(url);
 	let dataJson = await data.json();
+	console.log(dataJson);
 	return dataJson.releases;
 };
 
-const getData = async (url) => {
-	let jsonData = await APICall(url);
-	return jsonData;
-};
-
 const createCard = async (url) => {
-	const data = await getData(url);
+	const data = await APICall(url);
 	data.forEach((element) => {
 		const card = document.createElement("div");
 		card.classList.add("card");
