@@ -2,6 +2,7 @@
 
 #### ATTRIBUTIONS
 
+Using [Discogs API](https://www.discogs.com/developers/#)
 Background player photo by Lee Campbell @ Unsplash  
 Record icon by https://thenounproject.com/creator/isnainis081/  
 Cassette icon by https://thenounproject.com/creator/seochan.art  
