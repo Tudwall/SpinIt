@@ -1,5 +1,8 @@
 ![Logo de Spin It](./assets/icons/SpintIt-lineson.svg "logo de SpinIt!")
 
+Personal project for my web developer course by AFEC, the goal is to use everything learned during the course to make a website.  
+This website is a tracking service for all your favorite music releases, just like Discogs which inspired me a lot functionality-wise.
+
 #### ATTRIBUTIONS
 
 Using [Discogs API](https://www.discogs.com/developers/#)  
