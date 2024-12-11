@@ -64,11 +64,9 @@ header {
 				}
 			}
 		}
-		#logo {
-			img {
-				height: 7em;
-				float: left;
-			}
+		a > picture > img {
+			height: 7em;
+			float: left;
 		}
 	}
 }
@@ -135,9 +133,29 @@ main {
 	gap: 1em;
 }
 
-.menu-icon {
-	height: 2em;
-	filter: drop-shadow($drop-shadow);
+.dropdown {
+	position: relative;
+	display: inline-block;
+	.menu-icon {
+		height: 2em;
+		filter: drop-shadow($drop-shadow);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.dropdown-content {
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		z-index: 1;
+		p {
+			padding: 0.5em;
+			cursor: pointer;
+		}
+	}
+	.show {
+		display: flex;
+	}
 }
 
 .search-icon {

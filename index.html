@@ -11,13 +11,15 @@
 		<header class="shadow">
 			<div class="shadow header-wrapper">
 				<img src="assets/icons/Burger.svg" class="menu-icon burger" />
-				<picture id="logo">
-					<source
-						srcset="assets/icons/SpinIn-Mobile.svg"
-						media="(max-width:600px)"
-					/>
-					<img src="assets/icons/SpintIt-lineson.svg" alt="Logo de SpinIt!" />
-				</picture>
+				<a href="index.html" aria-label="Accueil" class="logo"
+					><picture>
+						<source
+							srcset="assets/icons/SpinIn-Mobile.svg"
+							media="(max-width:600px)"
+						/>
+						<img src="assets/icons/SpintIt-lineson.svg" alt="Logo de SpinIt!" />
+					</picture>
+				</a>
 
 				<form>
 					<input
@@ -62,13 +64,28 @@
 						aria-label="Barre de recherche"
 						class="menu-icon search-icon"
 					/>
-					<a
-						href="#"
-						class="notification-menu"
-						aria-label="Menu des notifications"
-						><img src="assets/icons/Notification-bell.svg" class="menu-icon"
-					/></a>
-					<img src="assets/icons/User.svg" class="menu-icon" id="user-icon" />
+
+					<div class="dropdown">
+						<img
+							src="assets/icons/Notification-bell.svg"
+							class="menu-icon"
+							id="notification-icon"
+						/>
+						<div id="notification-dropdown" class="dropdown-content">
+							<p>Aucune notification</p>
+						</div>
+					</div>
+
+					<div class="dropdown">
+						<img src="assets/icons/User.svg" class="menu-icon" id="user-icon" />
+						<div id="user-dropdown" class="dropdown-content">
+							<p>Profil</p>
+							<p>Collection</p>
+							<p>Liste de souhait</p>
+							<p>Préférences</p>
+							<p>Se déconnecter</p>
+						</div>
+					</div>
 				</div>
 			</div>
 			<nav>
