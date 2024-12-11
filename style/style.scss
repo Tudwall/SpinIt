@@ -64,9 +64,11 @@ header {
 				}
 			}
 		}
-		a > picture > img {
-			height: 7em;
-			float: left;
+		#logo {
+			img {
+				height: 7em;
+				float: left;
+			}
 		}
 	}
 }
@@ -94,6 +96,7 @@ nav {
 		}
 	}
 }
+
 main {
 	section {
 		padding-left: 1em;
@@ -114,6 +117,7 @@ main {
 .blue {
 	@include line($line-color-3);
 }
+
 .header-wrapper {
 	display: flex;
 	align-items: center;
