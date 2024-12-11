@@ -43,7 +43,7 @@ const APICall = async (url) => {
 	}
 };
 
-const createCard = async (url) => {
+const createCard = async (url, container) => {
 	const data = await APICall(url);
 	data.forEach((element) => {
 		const card = document.createElement("div");
@@ -99,9 +99,20 @@ const createCard = async (url) => {
 
 		card.appendChild(infoEl);
 		card.appendChild(actionsEl);
-		const container = document.getElementById("card-container");
 		container.appendChild(card);
 	});
 };
 
-createCard("https://api.discogs.com/artists/1/releases?page=1&per_page=15");
+const newReleases = document.getElementById("card-container-new");
+
+createCard(
+	"https://api.discogs.com/artists/108713/releases?page=1&per_page=14",
+	newReleases
+);
+
+const interest = document.getElementById("card-container-interest");
+
+createCard(
+	"https://api.discogs.com/artists/341539/releases?page=1&per_page=14",
+	interest
+);
