@@ -31,10 +31,16 @@ Objet retourné:
 */
 
 const APICall = async (url) => {
-	let data = await fetch(url);
-	let dataJson = await data.json();
-	console.log(dataJson);
-	return dataJson.releases;
+	try {
+		let response = await fetch(url);
+		if (!response.ok) {
+			throw new Error("Echec de la requête");
+		}
+		let dataJson = await response.json();
+		return dataJson.releases;
+	} catch (error) {
+		console.error("Erreur de la récupération des données: " + error);
+	}
 };
 
 const createCard = async (url) => {
@@ -45,22 +51,26 @@ const createCard = async (url) => {
 
 		const imageEl = document.createElement("img");
 		imageEl.classList.add("cover-art");
-		imageEl.setAttribute("src", "assets/icons/Record.svg");
+		if (element.thumb !== "") {
+			imageEl.setAttribute("src", `${element.thumb}`);
+		} else {
+			imageEl.setAttribute("src", "assets/icons/Record.svg");
+		}
 
 		const infoEl = document.createElement("div");
 		infoEl.classList.add("info");
 
 		const artistEl = document.createElement("span");
 		artistEl.classList.add("artist");
-		artistEl.textContent = element.artist;
+		artistEl.textContent = `${element.artist} - `;
 		const albumEl = document.createElement("span");
 		albumEl.classList.add("album");
-		albumEl.textContent = element.title;
+		albumEl.textContent = `${element.title} - `;
 		const dateEl = document.createElement("span");
 		dateEl.classList.add("date");
-		dateEl.textContent = element.year; // A fix: doit être une string
+		dateEl.textContent = element.year;
 
-		infoEl.appendChild(imageEl);
+		card.appendChild(imageEl);
 		infoEl.appendChild(artistEl);
 		infoEl.appendChild(albumEl);
 		infoEl.appendChild(dateEl);
@@ -94,4 +104,4 @@ const createCard = async (url) => {
 	});
 };
 
-createCard("https://api.discogs.com/artists/1/releases?page=1&per_page=1");
+createCard("https://api.discogs.com/artists/1/releases?page=1&per_page=15");
