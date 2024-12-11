@@ -106,7 +106,7 @@ const createCard = async (url, container) => {
 const newReleases = document.getElementById("card-container-new");
 
 createCard(
-	"https://api.discogs.com/artists/108713/releases?page=1&per_page=14",
+	"https://api.discogs.com/artists/30773/releases?page=1&per_page=14",
 	newReleases
 );
 
