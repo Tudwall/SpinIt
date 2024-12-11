@@ -139,18 +139,20 @@ main {
 	.menu-icon {
 		height: 2em;
 		filter: drop-shadow($drop-shadow);
-		&:hover {
-			cursor: pointer;
-		}
 	}
 	.dropdown-content {
 		display: none;
 		flex-direction: column;
+		gap: 0.5em;
 		position: absolute;
+		background-color: $accent-background-color;
+		box-shadow: $inset-shadow;
+		padding: 0.5em;
+		border-radius: 25px;
 		z-index: 1;
-		p {
-			padding: 0.5em;
-			cursor: pointer;
+		a {
+			text-decoration: none;
+			color: black;
 		}
 	}
 	.show {
