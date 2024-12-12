@@ -16,7 +16,6 @@ window.addEventListener("click", (e) => {
 		!e.target.matches("#notification-icon")
 	) {
 		let dropdowns = document.getElementsByClassName("dropdown-content");
-		console.log(dropdowns);
 		for (let i = 0; i < dropdowns.length; i++) {
 			let openDropdown = dropdowns[i];
 			if (openDropdown.classList.contains("show")) {
