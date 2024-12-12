@@ -139,6 +139,9 @@ main {
 	.menu-icon {
 		height: 2em;
 		filter: drop-shadow($drop-shadow);
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	.dropdown-content {
 		display: none;
@@ -147,12 +150,16 @@ main {
 		position: absolute;
 		background-color: $accent-background-color;
 		box-shadow: $inset-shadow;
-		padding: 0.5em;
+		padding: 1em;
 		border-radius: 25px;
 		z-index: 1;
+		left: -100px;
 		a {
 			text-decoration: none;
 			color: black;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 	.show {
