@@ -44,6 +44,12 @@ fieldset {
 		padding-left: 15%;
 		padding-right: 15%;
 		margin-top: 2em;
+		&:disabled {
+			background-color: lighten($line-color-2, 10%);
+			&:hover {
+				transform: scale(100%);
+			}
+		}
 	}
 	.hidden {
 		display: none;

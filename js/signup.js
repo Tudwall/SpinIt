@@ -1,9 +1,10 @@
-const form = document.querySelector("form");
+const form = document.getElementById("form");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
 const showPassword = document.getElementById("show-password");
 const showPasswordIcon = document.getElementById("show-password-icon");
 const matchPassword = document.getElementById("match");
+const submitBtn = document.getElementById("submit-button");
 
 const toggleShowPassword = () => {
 	if (password.type == "password") {
@@ -39,6 +40,22 @@ const updateRequirements = (id, valid) => {
 	}
 };
 
+const handleFormValidation = () => {
+	const value = password.value;
+	const confirmValue = confirmPassword.value;
+
+	if (
+		/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value) &&
+		value == confirmValue
+	) {
+		submitBtn.removeAttribute("disabled");
+		return true;
+	}
+
+	submitBtn.setAttribute("disabled", true);
+	return false;
+};
+
 password.addEventListener("input", (event) => {
 	const value = event.target.value;
 
@@ -59,4 +76,19 @@ confirmPassword.addEventListener("focus", () => {
 
 showPassword.addEventListener("click", () => {
 	toggleShowPassword();
+});
+
+form.addEventListener("change", () => {
+	handleFormValidation();
+});
+
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	const validForm = handleFormValidation();
+
+	if (!validForm) {
+		return false;
+	}
+
+	alert("form envoyé");
 });
