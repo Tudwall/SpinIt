@@ -3,6 +3,7 @@ const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
 const showPassword = document.getElementById("show-password");
 const showPasswordIcon = document.getElementById("show-password-icon");
+const matchPassword = document.getElementById("match");
 
 const toggleShowPassword = () => {
 	if (password.type == "password") {
@@ -19,6 +20,22 @@ const toggleShowPassword = () => {
 		showPassword.setAttribute("aria-checked", "true");
 	}
 };
+
+const comparePasswords = (value) => {
+	if (value.length && value != password.value) {
+		matchPassword.classList.remove("hidden");
+	} else {
+		matchPassword.classList.add("hidden");
+	}
+};
+
+confirmPassword.addEventListener("blur", (event) => {
+	comparePasswords(event.target.value);
+});
+
+confirmPassword.addEventListener("focus", () => {
+	matchPassword.classList.add("hidden");
+});
 
 showPassword.addEventListener("click", () => {
 	toggleShowPassword();
