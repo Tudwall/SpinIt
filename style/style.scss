@@ -94,6 +94,7 @@ nav {
 		}
 	}
 }
+
 main {
 	section {
 		padding-left: 1em;
@@ -114,6 +115,7 @@ main {
 .blue {
 	@include line($line-color-3);
 }
+
 .header-wrapper {
 	display: flex;
 	align-items: center;
@@ -131,9 +133,38 @@ main {
 	gap: 1em;
 }
 
-.menu-icon {
-	height: 2em;
-	filter: drop-shadow($drop-shadow);
+.dropdown {
+	position: relative;
+	display: inline-block;
+	.menu-icon {
+		height: 2em;
+		filter: drop-shadow($drop-shadow);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.dropdown-content {
+		display: none;
+		flex-direction: column;
+		gap: 0.5em;
+		position: absolute;
+		background-color: $accent-background-color;
+		box-shadow: $inset-shadow;
+		padding: 1em;
+		border-radius: 25px;
+		z-index: 1;
+		left: -100px;
+		a {
+			text-decoration: none;
+			color: black;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.show {
+		display: flex;
+	}
 }
 
 .search-icon {

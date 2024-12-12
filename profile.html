@@ -64,15 +64,28 @@
 						aria-label="Barre de recherche"
 						class="menu-icon search-icon"
 					/>
-					<a
-						href="#"
-						class="notification-menu"
-						aria-label="Menu des notifications"
-						><img src="assets/icons/Notification-bell.svg" class="menu-icon"
-					/></a>
-					<a href="login.html" class="account-menu" aria-label="Menu du compte"
-						><img src="assets/icons/User.svg" class="menu-icon"
-					/></a>
+
+					<div class="dropdown">
+						<img
+							src="assets/icons/Notification-bell.svg"
+							class="menu-icon"
+							id="notification-icon"
+						/>
+						<div id="notification-dropdown" class="dropdown-content">
+							<p>Aucune notification</p>
+						</div>
+					</div>
+
+					<div class="dropdown">
+						<img src="assets/icons/User.svg" class="menu-icon" id="user-icon" />
+						<div id="user-dropdown" class="dropdown-content">
+							<a href="profile.html">Profil</a>
+							<a href="collection.html">Collection</a>
+							<a href="wishlist.html">Liste de souhait</a>
+							<a href="preferences.html">Préférences</a>
+							<a href="#">Se déconnecter</a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<nav>
@@ -187,5 +200,6 @@
 		<footer>
 			<div class="lines"></div>
 		</footer>
+		<script src="js/buttons.js"></script>
 	</body>
 </html>
