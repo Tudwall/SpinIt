@@ -29,6 +29,26 @@ const comparePasswords = (value) => {
 	}
 };
 
+const updateRequirements = (id, valid) => {
+	const requirement = document.getElementById(id);
+
+	if (valid) {
+		requirement.classList.add("valid");
+	} else {
+		requirement.classList.remove("valid");
+	}
+};
+
+password.addEventListener("input", (event) => {
+	const value = event.target.value;
+
+	updateRequirements("length", value.length >= 8);
+	updateRequirements("lowercase", /[a-z]/.test(value));
+	updateRequirements("uppercase", /[A-Z]/.test(value));
+	updateRequirements("number", /\d/.test(value));
+	updateRequirements("characters", /[#.?!@$%^&*-]/.test(value));
+});
+
 confirmPassword.addEventListener("blur", (event) => {
 	comparePasswords(event.target.value);
 });

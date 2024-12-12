@@ -45,6 +45,9 @@ fieldset {
 		padding-right: 15%;
 		margin-top: 2em;
 	}
+	.hidden {
+		display: none;
+	}
 	.password-container {
 		display: flex;
 		align-items: center;
@@ -68,8 +71,17 @@ fieldset {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 1em;
-		p {
+		.requirement {
 			font-size: 0.75em;
+			&:not(.valid) {
+				color: $line-color-1;
+			}
+			.error {
+				color: $line-color-2;
+			}
+		}
+		.requirement.valid {
+			color: green;
 		}
 	}
 
