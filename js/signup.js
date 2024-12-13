@@ -48,10 +48,10 @@ const updateRequirements = (id, valid) => {
 };
 
 const handleFormValidation = () => {
-	const passwordValue = password.value;
-	const confirmValue = confirmPassword.value;
-	const emailValue = email.value;
-	const usernameValue = username.value;
+	const passwordValue = password.value.trim();
+	const confirmValue = confirmPassword.value.trim();
+	const emailValue = email.value.trim();
+	const usernameValue = username.value.trim();
 
 	if (
 		passwordRegex.test(passwordValue) &&
@@ -90,7 +90,7 @@ password.addEventListener("input", (event) => {
 });
 
 confirmPassword.addEventListener("blur", (event) => {
-	comparePasswords(event.target.value);
+	comparePasswords(event.target.value.trim());
 });
 
 confirmPassword.addEventListener("focus", () => {
@@ -108,6 +108,11 @@ form.addEventListener("change", () => {
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	const validForm = handleFormValidation();
+	const accountInfo = {
+		username: username.value.trim(),
+		email: email.value.trim(),
+		password: password.value.trim(),
+	};
 
 	if (!validForm) {
 		return false;
