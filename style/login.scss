@@ -73,22 +73,23 @@ fieldset {
 		}
 	}
 
+	.requirement {
+		font-size: 0.75em;
+		&:not(.valid) {
+			color: $line-color-1;
+		}
+		.error {
+			color: $line-color-2;
+		}
+	}
+	.requirement.valid {
+		color: green;
+	}
+
 	.password-requirements {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 1em;
-		.requirement {
-			font-size: 0.75em;
-			&:not(.valid) {
-				color: $line-color-1;
-			}
-			.error {
-				color: $line-color-2;
-			}
-		}
-		.requirement.valid {
-			color: green;
-		}
 	}
 
 	#password-desc {

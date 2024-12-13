@@ -1,10 +1,16 @@
 const form = document.getElementById("form");
+const email = document.getElementById("email");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
 const showPassword = document.getElementById("show-password");
 const showPasswordIcon = document.getElementById("show-password-icon");
 const matchPassword = document.getElementById("match");
 const submitBtn = document.getElementById("submit-button");
+
+const emailRegex =
+	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 const toggleShowPassword = () => {
 	if (password.type == "password") {
@@ -41,12 +47,14 @@ const updateRequirements = (id, valid) => {
 };
 
 const handleFormValidation = () => {
-	const value = password.value;
+	const passwordValue = password.value;
 	const confirmValue = confirmPassword.value;
+	const emailValue = email.value;
 
 	if (
-		/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value) &&
-		value == confirmValue
+		passwordRegex.test(passwordValue) &&
+		passwordValue == confirmValue &&
+		emailRegex.test(emailValue)
 	) {
 		submitBtn.removeAttribute("disabled");
 		return true;
@@ -56,8 +64,14 @@ const handleFormValidation = () => {
 	return false;
 };
 
-password.addEventListener("input", (event) => {
+email.addEventListener("input", (event) => {
 	const value = event.target.value;
+
+	updateRequirements("email-requirement", emailRegex.test(value));
+});
+
+password.addEventListener("input", (event) => {
+	const value = event.target.value.trim();
 
 	updateRequirements("length", value.length >= 8);
 	updateRequirements("lowercase", /[a-z]/.test(value));
