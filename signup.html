@@ -99,7 +99,7 @@
 		</header>
 
 		<main class="shadow">
-			<form>
+			<form id="form">
 				<fieldset class="shadow">
 					<label for="pseudo">Pseudo:</label>
 					<input
@@ -110,6 +110,10 @@
 						required
 						aria-required="true"
 					/>
+					<p class="requirement" id="username-requirement">
+						Votre pseudo doit faire plus de 2 caractères
+					</p>
+
 					<label for="email">Adresse email:</label>
 					<input
 						type="email"
@@ -119,16 +123,48 @@
 						required
 						aria-required="true"
 					/>
+					<p class="requirement" id="email-requirement">
+						Votre email doit être au format exemple@exemple.fr
+					</p>
 
 					<label for="password">Mot de passe:</label>
-					<input
-						type="password"
-						id="password"
-						name="password"
-						placeholder="motdepasse"
-						required
-						aria-required="true"
-					/>
+					<div class="password-container">
+						<input
+							type="password"
+							id="password"
+							name="password"
+							placeholder="motdepasse"
+							required
+							aria-required="true"
+						/>
+						<button
+							class="show-password"
+							id="show-password"
+							type="button"
+							role="switch"
+							aria-checked="false"
+							aria-label="Afficher le mot de passe"
+						>
+							<img id="show-password-icon" src="assets/icons/View.svg" />
+						</button>
+					</div>
+
+					<div class="password-requirements">
+						<p class="requirement" id="length">Minimum 8 caractères</p>
+						<p class="requirement" id="lowercase">
+							Doit inclure des minuscules
+						</p>
+						<p class="requirement" id="uppercase">
+							Doit contenir au moins une majuscule
+						</p>
+						<p class="requirement" id="number">
+							Doit contenir au moins un chiffre
+						</p>
+						<p class="requirement" id="characters">
+							Doit inclure un caractère spécial: #.-?!@$%^&*
+						</p>
+					</div>
+
 					<label for="confirm-password">Confirmez votre mot de passe:</label>
 					<input
 						type="password"
@@ -138,7 +174,14 @@
 						required
 						aria-required="true"
 					/>
-					<button type="submit">Connexion</button>
+
+					<div class="password-requirements">
+						<p class="requirement hidden error" id="match">
+							Les mots de passe doivent correspondre
+						</p>
+					</div>
+
+					<button type="submit" id="submit-button" disabled>Connexion</button>
 				</fieldset>
 			</form>
 		</main>
@@ -147,5 +190,6 @@
 			<div class="lines"></div>
 		</footer>
 		<script src="js/buttons.js"></script>
+		<script src="js/signup.js"></script>
 	</body>
 </html>
