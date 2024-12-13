@@ -1,4 +1,5 @@
 const form = document.getElementById("form");
+const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
@@ -50,11 +51,13 @@ const handleFormValidation = () => {
 	const passwordValue = password.value;
 	const confirmValue = confirmPassword.value;
 	const emailValue = email.value;
+	const usernameValue = username.value;
 
 	if (
 		passwordRegex.test(passwordValue) &&
 		passwordValue == confirmValue &&
-		emailRegex.test(emailValue)
+		emailRegex.test(emailValue) &&
+		usernameValue.length > 2
 	) {
 		submitBtn.removeAttribute("disabled");
 		return true;
@@ -63,6 +66,12 @@ const handleFormValidation = () => {
 	submitBtn.setAttribute("disabled", true);
 	return false;
 };
+
+username.addEventListener("input", (event) => {
+	const value = event.target.value;
+
+	updateRequirements("username-requirement", value.length > 2);
+});
 
 email.addEventListener("input", (event) => {
 	const value = event.target.value;
