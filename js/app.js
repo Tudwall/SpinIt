@@ -37,6 +37,7 @@ const APICall = async (url) => {
 			throw new Error("Echec de la requête");
 		}
 		let dataJson = await response.json();
+		sessionStorage.setItem("releases", JSON.stringify(dataJson.releases));
 		return dataJson.releases;
 	} catch (error) {
 		console.error("Erreur de la récupération des données: " + error);
@@ -89,7 +90,12 @@ const createCard = async (url, container) => {
 		const addEl = document.createElement("div");
 		const addCollec = document.createElement("img");
 		addCollec.setAttribute("src", "assets/icons/Add.svg");
+		addCollec.setAttribute("id", "add-collection");
+		addCollec.setAttribute("data-release-id", `${element.id}`);
 		addCollec.classList.add("add-collection");
+		addCollec.addEventListener("click", (event) => {
+			addFavorite(event.target);
+		});
 		const addWish = document.createElement("img");
 		addWish.setAttribute("src", "assets/icons/Heart-outline.svg");
 		addWish.classList.add("add-wishlist");
@@ -116,3 +122,30 @@ createCard(
 	"https://api.discogs.com/artists/341539/releases?page=1&per_page=14",
 	interest
 );
+
+const checkLocalStorage = (key) => {
+	if (localStorage.getItem(key) == null) {
+		const data = [];
+		return data;
+	} else {
+		const data = [JSON.parse(localStorage.getItem(key))];
+		return data;
+	}
+};
+
+const addFavorite = (card) => {
+	const cardId = card.getAttribute("data-release-id");
+	console.log(cardId);
+
+	const releases = JSON.parse(sessionStorage.getItem("releases"));
+
+	const favorites = checkLocalStorage("favorites");
+	console.log(favorites);
+
+	releases.forEach((element) => {
+		if (element.id == cardId) {
+			favorites.push(element);
+			localStorage.setItem("favorites", JSON.stringify(favorites));
+		}
+	});
+};
