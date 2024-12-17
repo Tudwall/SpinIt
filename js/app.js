@@ -37,7 +37,7 @@ const APICall = async (url) => {
 			throw new Error("Echec de la requête");
 		}
 		let dataJson = await response.json();
-		const releases = checkSessionStorage("releases"); // Array
+		const releases = checkSessionStorage("releases");
 		releases.push(...dataJson.releases);
 		sessionStorage.setItem("releases", JSON.stringify(releases));
 		return dataJson.releases;
@@ -147,12 +147,10 @@ const checkSessionStorage = (key) => {
 
 const addFavorite = (card) => {
 	const cardId = card.getAttribute("data-release-id");
-	console.log(cardId);
 
 	const releases = JSON.parse(sessionStorage.getItem("releases"));
 
 	const favorites = checkLocalStorage("favorites");
-	console.log(favorites);
 
 	releases.forEach((element) => {
 		if (element.id == cardId) {
