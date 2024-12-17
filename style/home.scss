@@ -37,6 +37,12 @@ main {
 		padding-right: 2em;
 		.card {
 			@include card;
+			.add-collection {
+				cursor: pointer;
+				&:active {
+					transform: scale(0.9);
+				}
+			}
 		}
 	}
 }
