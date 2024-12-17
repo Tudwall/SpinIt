@@ -37,7 +37,9 @@ const APICall = async (url) => {
 			throw new Error("Echec de la requête");
 		}
 		let dataJson = await response.json();
-		sessionStorage.setItem("releases", JSON.stringify(dataJson.releases));
+		const releases = checkSessionStorage("releases"); // Array
+		releases.push(...dataJson.releases);
+		sessionStorage.setItem("releases", JSON.stringify(releases));
 		return dataJson.releases;
 	} catch (error) {
 		console.error("Erreur de la récupération des données: " + error);
@@ -128,7 +130,17 @@ const checkLocalStorage = (key) => {
 		const data = [];
 		return data;
 	} else {
-		const data = [JSON.parse(localStorage.getItem(key))];
+		const data = JSON.parse(localStorage.getItem(key));
+		return data;
+	}
+};
+
+const checkSessionStorage = (key) => {
+	if (sessionStorage.getItem(key) == null) {
+		const data = [];
+		return data;
+	} else {
+		const data = JSON.parse(sessionStorage.getItem(key));
 		return data;
 	}
 };
