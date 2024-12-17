@@ -46,6 +46,7 @@ fieldset {
 		margin-top: 2em;
 		&:disabled {
 			background-color: lighten($line-color-2, 10%);
+			color: $background-color;
 			&:hover {
 				transform: scale(100%);
 			}
