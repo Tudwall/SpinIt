@@ -38,13 +38,60 @@ fieldset {
 	input[type="email"]:focus {
 		outline: 0;
 	}
-	button {
+	button[type="submit"] {
 		@include button;
 		align-self: center;
 		padding-left: 15%;
 		padding-right: 15%;
 		margin-top: 2em;
+		&:disabled {
+			background-color: lighten($line-color-2, 10%);
+			&:hover {
+				transform: scale(100%);
+			}
+		}
 	}
+	.hidden {
+		display: none;
+	}
+	.password-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		.show-password {
+			background-color: transparent;
+			cursor: pointer;
+			outline: none;
+			border: none;
+			img {
+				width: 3em;
+				&:hover {
+					transform: scale(90%);
+				}
+			}
+		}
+	}
+
+	.requirement {
+		font-size: 0.75em;
+		&:not(.valid) {
+			color: $line-color-1;
+		}
+		.error {
+			color: $line-color-2;
+		}
+	}
+	.requirement.valid {
+		color: green;
+	}
+
+	.password-requirements {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1em;
+	}
+
 	#password-desc {
 		margin-bottom: 15%;
 	}
