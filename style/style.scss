@@ -152,7 +152,7 @@ main {
 		box-shadow: $inset-shadow;
 		padding: 1em;
 		border-radius: 25px;
-		z-index: 1;
+		z-index: 99;
 		left: -100px;
 		a {
 			text-decoration: none;
