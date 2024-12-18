@@ -212,16 +212,6 @@ const checkLocalStorage = (key) => {
 	}
 };
 
-const checkSessionStorage = (key) => {
-	if (sessionStorage.getItem(key) == null) {
-		const data = [];
-		return data;
-	} else {
-		const data = JSON.parse(sessionStorage.getItem(key));
-		return data;
-	}
-};
-
 const addFavorite = (card) => {
 	const cardId = card.getAttribute("data-release-id");
 
