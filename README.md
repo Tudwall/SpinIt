@@ -3,6 +3,8 @@
 Personal project for my web developer course by AFEC, the goal is to use everything learned during the course to make a website.  
 This website is a tracking service for all your favorite music releases, just like Discogs which inspired me a lot functionality-wise.
 
+[Mockup](https://www.figma.com/design/EMKkCUtnZxbWHzHUpLrBFg/Maquette?node-id=3-372&t=Zmu5bZuvrkEsq5Tl-1)
+
 #### ATTRIBUTIONS
 
 Using [Discogs API](https://www.discogs.com/developers/#)  
