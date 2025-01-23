@@ -3,20 +3,23 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style/login.css" />
-		<title>SpinIt! - Connexion</title>
+		<link rel="stylesheet" href="../../styles/login.css" />
+		<title>SpinIt! - Inscription</title>
 	</head>
 	<body>
 		<header class="shadow">
 			<div class="shadow header-wrapper">
-				<img src="assets/icons/Burger.svg" class="menu-icon burger" />
-				<a href="index.html" aria-label="Accueil" class="logo"
+				<img src="../assets/icons/Burger.svg" class="menu-icon burger" />
+				<a href="../../index.html" aria-label="Accueil" class="logo"
 					><picture>
 						<source
 							srcset="assets/icons/SpinIn-Mobile.svg"
 							media="(max-width:600px)"
 						/>
-						<img src="assets/icons/SpintIt-lineson.svg" alt="Logo de SpinIt!" />
+						<img
+							src="../assets/icons/SpintIt-lineson.svg"
+							alt="Logo de SpinIt!"
+						/>
 					</picture>
 				</a>
 
@@ -59,14 +62,14 @@
 
 				<div class="menus">
 					<img
-						src="assets/icons/Magnifier.svg"
+						src="../assets/icons/Magnifier.svg"
 						aria-label="Barre de recherche"
 						class="menu-icon search-icon"
 					/>
 
 					<div class="dropdown">
 						<img
-							src="assets/icons/Notification-bell.svg"
+							src="../assets/icons/Notification-bell.svg"
 							class="menu-icon"
 							id="notification-icon"
 						/>
@@ -76,7 +79,11 @@
 					</div>
 
 					<div class="dropdown">
-						<img src="assets/icons/User.svg" class="menu-icon" id="user-icon" />
+						<img
+							src="../assets/icons/User.svg"
+							class="menu-icon"
+							id="user-icon"
+						/>
 						<div id="user-dropdown" class="dropdown-content">
 							<a href="profile.html">Profil</a>
 							<a href="collection.html">Collection</a>
@@ -99,8 +106,21 @@
 		</header>
 
 		<main class="shadow">
-			<form>
+			<form id="form">
 				<fieldset class="shadow">
+					<label for="pseudo">Pseudo:</label>
+					<input
+						type="text"
+						id="username"
+						name="username"
+						placeholder="pseudonyme"
+						required
+						aria-required="true"
+					/>
+					<p class="requirement" id="username-requirement">
+						Votre pseudo doit faire plus de 2 caractères
+					</p>
+
 					<label for="email">Adresse email:</label>
 					<input
 						type="email"
@@ -110,19 +130,65 @@
 						required
 						aria-required="true"
 					/>
+					<p class="requirement" id="email-requirement">
+						Votre email doit être au format exemple@exemple.fr
+					</p>
 
 					<label for="password">Mot de passe:</label>
+					<div class="password-container">
+						<input
+							type="password"
+							id="password"
+							name="password"
+							placeholder="motdepasse"
+							required
+							aria-required="true"
+						/>
+						<button
+							class="show-password"
+							id="show-password"
+							type="button"
+							role="switch"
+							aria-checked="false"
+							aria-label="Afficher le mot de passe"
+						>
+							<img id="show-password-icon" src="../assets/icons/View.svg" />
+						</button>
+					</div>
+
+					<div class="password-requirements">
+						<p class="requirement" id="length">Minimum 8 caractères</p>
+						<p class="requirement" id="lowercase">
+							Doit inclure des minuscules
+						</p>
+						<p class="requirement" id="uppercase">
+							Doit contenir au moins une majuscule
+						</p>
+						<p class="requirement" id="number">
+							Doit contenir au moins un chiffre
+						</p>
+						<p class="requirement" id="characters">
+							Doit inclure un caractère spécial: #.-?!@$%^&*
+						</p>
+					</div>
+
+					<label for="confirm-password">Confirmez votre mot de passe:</label>
 					<input
 						type="password"
-						id="password"
-						name="password"
+						id="confirm-password"
+						name="confirm-password"
 						placeholder="motdepasse"
 						required
 						aria-required="true"
 					/>
-					<button id="login-btn" type="submit">
-						<a href="#">Connexion</a>
-					</button>
+
+					<div class="password-requirements">
+						<p class="requirement hidden error" id="match">
+							Les mots de passe doivent correspondre
+						</p>
+					</div>
+
+					<button type="submit" id="submit-button" disabled>Connexion</button>
 				</fieldset>
 			</form>
 		</main>
@@ -130,7 +196,7 @@
 		<footer>
 			<div class="lines"></div>
 		</footer>
-		<script src="js/login.js"></script>
-		<script src="js/buttons.js"></script>
+		<script src="../utils/buttons.js"></script>
+		<script src="../utils/signup.js"></script>
 	</body>
 </html>

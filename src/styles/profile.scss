@@ -1,16 +1,16 @@
-@import "variables";
-@import "mixins";
-@import "style";
+@use "variables";
+@use "mixins";
+@use "style";
 
 main {
 	display: flex;
 	flex-direction: column;
 	a {
 		text-decoration: none;
-		color: $font-color;
+		color: variables.$font-color;
 	}
 	section {
-		box-shadow: $box-shadow;
+		box-shadow: variables.$box-shadow;
 		padding-bottom: 0.5em;
 		.section-title {
 			display: flex;
@@ -53,7 +53,7 @@ main {
 			padding-left: 2em;
 			padding-right: 2em;
 			.card {
-				@include card;
+				@include mixins.card;
 				.add-collection,
 				.remove-collection {
 					cursor: pointer;
@@ -71,7 +71,7 @@ main {
 			flex-wrap: wrap;
 			padding: 1em;
 			.element {
-				@include card;
+				@include mixins.card;
 			}
 		}
 	}

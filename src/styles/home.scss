@@ -1,14 +1,16 @@
-@import "mixins";
-@import "style";
+@use "mixins";
+@use "style";
+@use "variables";
+
 
 main {
 	display: flex;
 	flex-direction: column;
-	background-color: $background-color;
-	box-shadow: $box-shadow;
+	background-color: variables.$background-color;
+	box-shadow: variables.$box-shadow;
 	z-index: 3;
 	section {
-		box-shadow: $box-shadow;
+		box-shadow: variables.$box-shadow;
 		padding-bottom: 1em;
 	}
 	section:nth-child(1) {
@@ -24,7 +26,7 @@ main {
 		padding-left: 0.5em;
 		a {
 			text-decoration: none;
-			color: $font-color;
+			color: variables.$font-color;
 		}
 	}
 	.card-container {
@@ -36,7 +38,7 @@ main {
 		padding-left: 2em;
 		padding-right: 2em;
 		.card {
-			@include card;
+			@include mixins.card;
 			.add-collection {
 				cursor: pointer;
 				&:active {
@@ -54,7 +56,7 @@ main {
 			gap: 0.5em;
 			padding: 0;
 			.card {
-				@include list;
+				@include mixins.list;
 			}
 		}
 	}
