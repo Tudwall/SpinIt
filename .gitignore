@@ -1,4 +1,4 @@
-style/*.css
-style/*.map
+styles/*.css
+styles/*.map
 !style/css-reset.css
 node_modules
