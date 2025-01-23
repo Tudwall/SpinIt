@@ -1,7 +1,7 @@
 {
 	"name": "spinit!",
 	"version": "1.0.0",
-	"description": "![Logo de Spin It](./assets/icons/SpintIt-lineson.svg \"logo de SpinIt!\")",
+	"description": "Personal project for my web developer course by AFEC, the goal is to use everything learned during the course to make a website. This website is a tracking service for all your favorite music releases, just like Discogs which inspired me a lot functionality-wise.",
 	"main": "app.js",
 	"scripts": {
 		"build": "sass src/styles:styles",
