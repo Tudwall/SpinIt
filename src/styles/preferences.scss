@@ -1,6 +1,6 @@
-@import "style";
-@import "mixins";
-@import "variables";
+@use "style";
+@use "mixins";
+@use "variables";
 
 main {
 	display: flex;
@@ -35,13 +35,13 @@ main {
 		gap: 1em;
 		width: fit-content;
 		textarea {
-			font-family: $main-font;
-			color: $font-color;
+			font-family: variables.$main-font;
+			color: variables.$font-color;
 			padding: 0.5em;
 			border: none;
 			border-radius: 25px;
-			box-shadow: $inset-shadow;
-			background-color: $accent-background-color;
+			box-shadow: variables.$inset-shadow;
+			background-color: variables.$accent-background-color;
 			width: 60em;
 		}
 	}
@@ -54,13 +54,13 @@ main {
 		gap: 1em;
 		padding: 3em;
 		button {
-			@include button;
+			@include mixins.button;
 		}
 		#delete-account {
 			background-color: #e6c0c3;
 		}
 		#data-claim {
-			background-color: $accent-background-color;
+			background-color: variables.$accent-background-color;
 		}
 	}
 }

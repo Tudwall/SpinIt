@@ -1,5 +1,7 @@
-@import "mixins";
-@import "style";
+@use "mixins";
+@use "style";
+@use "variables";
+
 
 main {
 	display: flex;
@@ -24,12 +26,12 @@ main {
 			flex-direction: column;
 			gap: 0.5em;
 			.element {
-				@include list;
+				@include mixins.list;
 				height: 3em;
 				justify-content: space-between;
 				align-items: center;
 				.remove-collection {
-					filter: drop-shadow($drop-shadow);
+					filter: drop-shadow(variables.$drop-shadow);
 				}
 			}
 		}

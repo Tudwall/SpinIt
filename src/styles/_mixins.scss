@@ -1,22 +1,23 @@
-@import "variables";
+@use "sass:color";
+@use "variables";
 
 @mixin button {
-	font-family: $main-font;
-	background-color: $input-background-color;
+	font-family: variables.$main-font;
+	background-color: variables.$input-background-color;
 	border-radius: 50px;
 	padding: 1em;
-	box-shadow: $box-shadow;
+	box-shadow: variables.$box-shadow;
 	border: 0;
 	a {
 		text-decoration: none;
-		color: $font-color;
+		color: variables.$font-color;
 	}
 	&:hover {
-		background-color: darken($input-background-color, 10%);
+		background-color: color.adjust(variables.$input-background-color, $lightness: -10%);
 		cursor: pointer;
 	}
 	&:active {
-		background-color: darken($input-background-color, 20%);
+		background-color: color.adjust(variables.$input-background-color, $lightness: -20%);
 		transform: scale(0.9);
 	}
 }
@@ -25,11 +26,11 @@
 	display: flex;
 	flex-direction: column;
 	flex-basis: 12.5%;
-	background-color: $card-background-color;
+	background-color: variables.$card-background-color;
 	border-radius: 25px;
-	box-shadow: $box-shadow;
+	box-shadow: variables.$box-shadow;
 	.cover-art {
-		background-color: $input-background-color;
+		background-color: variables.$input-background-color;
 		border-top-right-radius: 25px;
 		border-top-left-radius: 25px;
 		margin-bottom: 1em;
@@ -45,7 +46,7 @@
 		margin-bottom: 0.5em;
 	}
 	.stars {
-		filter: drop-shadow($drop-shadow);
+		filter: drop-shadow(variables.$drop-shadow);
 	}
 	.add-collection {
 		@extend .stars;
@@ -61,11 +62,11 @@
 	display: flex;
 	flex-direction: row;
 	flex-basis: auto;
-	background-color: $input-background-color;
+	background-color: variables.$input-background-color;
 	border-radius: 10px;
-	box-shadow: $box-shadow;
+	box-shadow: variables.$box-shadow;
 	.cover-art {
-		background-color: $input-background-color;
+		background-color: variables.$input-background-color;
 		height: 2em;
 		border-bottom-left-radius: 10px;
 		margin: 0;
@@ -83,7 +84,7 @@
 		margin: 0;
 	}
 	.stars {
-		filter: drop-shadow($drop-shadow);
+		filter: drop-shadow(variables.$drop-shadow);
 	}
 	.add-collection {
 		@extend .stars;
@@ -98,6 +99,6 @@
 @mixin line($color) {
 	height: 100px;
 	background-image: linear-gradient(to bottom, $color, $color 100%);
-	box-shadow: $box-shadow;
+	box-shadow: variables.$box-shadow;
 	background-size: 100% 100px;
 }

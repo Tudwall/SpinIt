@@ -1,4 +1,7 @@
-@import "style";
+@use "style";
+@use "mixins";
+@use "variables";
+
 
 body {
 	height: 100vh;
@@ -15,13 +18,13 @@ main {
 		background-color: rgba(255, 255, 255, 0.35);
 		backdrop-filter: blur(10px);
 		border-radius: 25px;
-		color: $background-color;
+		color: variables.$background-color;
 		text-shadow: 0 4px 6px black;
 		font-size: 2em;
 		padding: 5%;
 	}
 	.cta {
-		@include button;
+		@include mixins.button;
 		position: absolute;
 		top: 55%;
 		left: 42.5%;
@@ -34,7 +37,7 @@ main {
 
 @media screen and (max-width: 600px) {
 	main {
-		background-color: $background-color;
+		background-color: variables.$background-color;
 		img {
 			display: none;
 		}
