@@ -1,4 +1,4 @@
-![Logo de Spin It](./src/assets/icons/SpintIt-lineson.svg "logo de SpinIt!")
+![Logo de Spin It](./client/src/assets/icons/SpintIt-lineson.svg "logo de SpinIt!")
 
 Personal project for my web developer course by AFEC, the goal is to use everything learned during the course to make a website.  
 This website is a tracking service for all your favorite music releases, just like Discogs which inspired me a lot functionality-wise.
