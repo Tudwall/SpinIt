@@ -4,6 +4,7 @@
 	"description": "![Logo de Spin It](./assets/icons/SpintIt-lineson.svg \"logo de SpinIt!\")",
 	"main": "app.js",
 	"scripts": {
+		"build": "sass src/styles:styles",
 		"start": "nodemon app.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
