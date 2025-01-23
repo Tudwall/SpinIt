@@ -1,0 +1,21 @@
+{
+	"name": "spinit!",
+	"version": "1.0.0",
+	"description": "![Logo de Spin It](./assets/icons/SpintIt-lineson.svg \"logo de SpinIt!\")",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Tudwall/SpinIt.git"
+	},
+	"keywords": [],
+	"author": "Pierre Laffaille",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Tudwall/SpinIt/issues"
+	},
+	"homepage": "https://github.com/Tudwall/SpinIt#readme"
+}

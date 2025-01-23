@@ -1,5 +1,5 @@
-@import "mixins";
-@import "style";
+@use "mixins";
+@use "style";
 
 main {
 	display: flex;
