@@ -2,3 +2,4 @@ client/public/styles/*.css
 client/public/styles/*.map
 !client/public/styles/css-reset.css
 server/node_modules
+server/config/.env
