@@ -1,14 +1,26 @@
-import mongoose from "mongoose";
+import mariadb from "mariadb";
 
-const mongooseConnect = async () => {
-	console.log(process.env.DATABASE_URL);
+const pool = mariadb.createPool({
+	host: process.env.DB_HOST,
+	user: process.env.DB_USER,
+	password: process.env.DB_PASSWORD,
+	connectionLimit: 5,
+});
+
+(async function mariaConnect() {
+	const conn = await mariadb.createConnection({
+		host: "mydb.com",
+		user: "myUser",
+		password: "myPwd",
+	});
+
 	try {
-		await mongoose.connect(process.env.DATABASE_URL);
-		console.info("mongoose is connected to database");
+		const res = await conn.query("select *");
+		console.log(res);
+		return res;
 	} catch (err) {
-		console.error(`mongoose connection issue ${err}`);
-		process.exit();
+		console.error(err);
+	} finally {
+		conn.end();
 	}
-};
-
-export default mongooseConnect;
+})();
