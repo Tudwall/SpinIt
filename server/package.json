@@ -1,11 +1,11 @@
 {
-	"name": "spinit!",
+	"name": "spinit-back",
 	"version": "1.0.0",
 	"description": "Personal project for my web developer course by AFEC, the goal is to use everything learned during the course to make a website. This website is a tracking service for all your favorite music releases, just like Discogs which inspired me a lot functionality-wise.",
-	"main": "client/src/app.js",
+	"main": "src/app.js",
+	"type": "module",
 	"scripts": {
-		"build": "sass client/src/styles:client/public/styles",
-		"start": "nodemon client/src/app.js",
+		"start": "nodemon app.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -18,5 +18,10 @@
 	"bugs": {
 		"url": "https://github.com/Tudwall/SpinIt/issues"
 	},
-	"homepage": "https://github.com/Tudwall/SpinIt#readme"
+	"homepage": "https://github.com/Tudwall/SpinIt#readme",
+	"dependencies": {
+		"dotenv": "^16.4.7",
+		"express": "^4.21.2",
+		"mariadb": "^3.4.0"
+	}
 }
