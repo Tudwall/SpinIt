@@ -31,6 +31,33 @@ class ReleaseController {
 			res.status(400).json({ err: err.message });
 		}
 	}
+
+	async getReleaseById(req, res) {
+		const { id } = req.params;
+		try {
+			const release = await this.releaseService.getReleaseById(id);
+			res.status(200).json({ release });
+		} catch (err) {
+			res.status(400).json({ err: err.message });
+		}
+	}
+
+	async updateRelease(req, res) {
+		const { id } = req.params;
+		const { cover, title, artists, release_date, discogs_id } = req.body;
+		try {
+			const updatedRelease = await this.releaseService.updateRelease(id, {
+				cover,
+				title,
+				artists,
+				release_date,
+				discogs_id,
+			});
+			res.status(200).json(updatedRelease);
+		} catch (err) {
+			res.status(400).json({ err: err.message });
+		}
+	}
 }
 
 export default ReleaseController;

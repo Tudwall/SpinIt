@@ -48,12 +48,14 @@ class UserRepository {
 		let conn;
 		try {
 			conn = await this.pool.getConnection();
-			const rows = await conn.query("SELECT * FROM Users WHERE id = ?", [id]);
+			const rows = await conn.query("SELECT * FROM users WHERE id = ?", [id]);
 			return rows[0] || null;
 		} catch (err) {
 			throw new Error(
 				"Erreur lors de la récupération de l'utilisateur: " + err.message
 			);
+		} finally {
+			if (conn) conn.release();
 		}
 	}
 
@@ -62,12 +64,12 @@ class UserRepository {
 		try {
 			conn = await this.pool.getConnection();
 			const result = await conn.query(
-				"UPDATE Users SET pfp = ?, name = ?, bio = ?, email = ?, pwd = ? WHERE id = ?",
+				"UPDATE users SET pfp = ?, name = ?, bio = ?, email = ?, pwd = ? WHERE id = ?",
 				[pfp, name, bio, email, pwd, id]
 			);
 			if (result.affectedRows === 0) throw new Error("Utilisateur non trouvé");
 
-			const updatedUser = await conn.query("SELECT * FROM Users WHERE id = ?", [
+			const updatedUser = await conn.query("SELECT * FROM users WHERE id = ?", [
 				id,
 			]);
 			return updatedUser;
