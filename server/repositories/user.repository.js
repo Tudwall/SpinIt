@@ -34,7 +34,7 @@ class UserRepository {
 		let conn;
 		try {
 			conn = await this.pool.getConnection();
-			return await conn.query("SELECT * FROM Users");
+			return await conn.query("SELECT * FROM users");
 		} catch (err) {
 			throw new Error(
 				"Erreur lors de la récupération des utilisateurs: " + err.message
