@@ -53,6 +53,18 @@ class ReleaseService {
 			throw new Error(err.message);
 		}
 	}
+
+	async deleteRelease(id) {
+		try {
+			const deletedRelease = await this.releaseRepository.deleteRelease(id);
+			if (!deletedRelease) {
+				throw new Error("Release non trouvée");
+			}
+			return { message: "Release supprimée" };
+		} catch (err) {
+			throw new Error(err.message);
+		}
+	}
 }
 
 export default ReleaseService;

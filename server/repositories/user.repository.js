@@ -86,7 +86,7 @@ class UserRepository {
 		let conn;
 		try {
 			conn = await this.pool.getConnection();
-			const result = await conn.query("DELETE FROM Users WHERE id = ?", [id]);
+			const result = await conn.query("DELETE FROM users WHERE id = ?", [id]);
 			if (result.affectedRows === 0) throw new Error("Utilisateur non trouvé");
 			return { message: "Utilisateur supprimé avec succès" };
 		} catch (err) {

@@ -25,8 +25,8 @@ class ReleaseController {
 
 	async getReleases(req, res) {
 		try {
-			const users = await this.releaseService.getReleases();
-			res.status(200).json({ users });
+			const releases = await this.releaseService.getReleases();
+			res.status(200).json({ releases });
 		} catch (err) {
 			res.status(400).json({ err: err.message });
 		}
@@ -54,6 +54,16 @@ class ReleaseController {
 				discogs_id,
 			});
 			res.status(200).json(updatedRelease);
+		} catch (err) {
+			res.status(400).json({ err: err.message });
+		}
+	}
+
+	async deleteRelease(req, res) {
+		const { id } = req.params;
+		try {
+			const result = await this.releaseService.deleteRelease(id);
+			res.status(200).json(result);
 		} catch (err) {
 			res.status(400).json({ err: err.message });
 		}

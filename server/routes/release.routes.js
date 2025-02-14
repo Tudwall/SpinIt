@@ -8,5 +8,6 @@ router.post("/:id", (req, res) => releaseController.createRelease(req, res));
 router.get("/", (req, res) => releaseController.getReleases(req, res));
 router.get("/:id", (req, res) => releaseController.getReleaseById(req, res));
 router.put("/:id", (req, res) => releaseController.updateRelease(req, res));
+router.delete("/:id", (req, res) => releaseController.deleteRelease(req, res));
 
 export default router;

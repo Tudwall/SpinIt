@@ -86,6 +86,24 @@ class ReleaseRepository {
 			if (conn) conn.release();
 		}
 	}
+
+	async deleteRelease(id) {
+		let conn;
+		try {
+			conn = await this.pool.getConnection();
+			const result = await conn.query("DELETE FROM releases WHERE id = ?", [
+				id,
+			]);
+			if (result.affectedRows === 0) throw new Error("Release non trouvée");
+			return { message: "Release supprimée avec succès" };
+		} catch (err) {
+			throw new Error(
+				"Erreur lors de la récupération de la release: " + err.message
+			);
+		} finally {
+			if (conn) conn.release();
+		}
+	}
 }
 
 export default ReleaseRepository;
