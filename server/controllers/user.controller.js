@@ -1,5 +1,6 @@
 import UserService from "../services/user.service.js";
-
+import argon2 from "argon2";
+import jwt from "jsonwebtoken";
 class UserController {
 	constructor() {
 		this.userService = new UserService();
@@ -9,13 +10,17 @@ class UserController {
 		const { id } = req.params;
 		const { pfp, name, bio, email, pwd } = req.body;
 		try {
+			const hashedPassword = await argon2.hash(pwd, {
+				type: argon2.argon2d,
+			});
+
 			const newUser = await this.userService.createUser({
 				id,
 				pfp,
 				name,
 				bio,
 				email,
-				pwd,
+				pwd: hashedPassword,
 			});
 			res.status(201).json(newUser);
 		} catch (err) {
