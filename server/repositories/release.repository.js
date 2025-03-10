@@ -1,26 +1,17 @@
-import mariadb from "mariadb";
-import dotenv from "dotenv";
-dotenv.config();
+import pool from "../config/db.config.js";
 
 class ReleaseRepository {
 	constructor() {
-		this.pool = mariadb.createPool({
-			host: process.env.DB_HOST,
-			port: process.env.DB_PORT,
-			user: process.env.DB_USER,
-			password: process.env.DB_PASSWORD,
-			database: process.env.DATABASE,
-			connectionLimit: 5,
-		});
+		this.pool = pool();
 	}
 
-	async createRelease({ id, cover, title, artists, release_date, discogs_id }) {
+	async createRelease({ cover, title, artists, release_date, discogs_id }) {
 		let conn;
 		try {
 			conn = await this.pool.getConnection();
 			const newRelease = await conn.query(
-				"INSERT INTO Releases (id, cover, title, artists, release_date, discogs_id) VALUES (?,?,?,?,?,?) RETURNING *",
-				[id, cover, title, artists, release_date, discogs_id]
+				"INSERT INTO Releases (cover, title, artists, release_date, discogs_id) VALUES (?,?,?,?,?) RETURNING *",
+				[cover, title, artists, release_date, discogs_id]
 			);
 			return newRelease;
 		} catch (err) {

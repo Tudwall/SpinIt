@@ -1,4 +1,6 @@
 import UserRepository from "../repositories/user.repository.js";
+import argon2 from "argon2";
+import jwt from "jsonwebtoken";
 
 class UserService {
 	constructor() {
@@ -17,6 +19,21 @@ class UserService {
 			});
 		} catch (err) {
 			throw new Error(err.message);
+		}
+	}
+
+	async loginUser({ email, pwd }) {
+		try {
+			const user = await this.userRepository.getUserByEmail(email);
+			if (!user || !(await argon2.verify(user.pwd, pwd))) {
+				throw new Error("Identifiants incorrects");
+			}
+			const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+				expiresIn: "1h",
+			});
+			return token;
+		} catch (err) {
+			console.error(err);
 		}
 	}
 

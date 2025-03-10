@@ -5,12 +5,10 @@ class ReleaseController {
 		this.releaseService = new ReleaseService();
 	}
 
-	async createRelease(req, res) {
-		const { id } = req.params;
+	async createRelease(req, res, next) {
 		const { cover, title, artists, release_date, discogs_id } = req.body;
 		try {
 			const newRelease = await this.releaseService.createRelease({
-				id,
 				cover,
 				title,
 				artists,
@@ -20,6 +18,7 @@ class ReleaseController {
 			res.status(201).json(newRelease);
 		} catch (err) {
 			res.status(400).json({ err: err.message });
+			next(err);
 		}
 	}
 

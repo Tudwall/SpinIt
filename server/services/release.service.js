@@ -1,3 +1,4 @@
+import { ResourceNotFoundException } from "../errors/exceptions.js";
 import ReleaseRepository from "../repositories/release.repository.js";
 
 class ReleaseService {
@@ -5,10 +6,9 @@ class ReleaseService {
 		this.releaseRepository = new ReleaseRepository();
 	}
 
-	async createRelease({ id, cover, title, artists, release_date, discogs_id }) {
+	async createRelease({ cover, title, artists, release_date, discogs_id }) {
 		try {
 			return await this.releaseRepository.createRelease({
-				id,
 				cover,
 				title,
 				artists,
@@ -22,9 +22,11 @@ class ReleaseService {
 
 	async getReleases() {
 		try {
-			return await this.releaseRepository.getReleases();
+			const releases = await this.releaseRepository.getReleases();
+			if (!releases)
+				throw new ResourceNotFoundException(404, "Releases not found");
 		} catch (err) {
-			throw new Error(err.message);
+			throw new Error(err);
 		}
 	}
 
