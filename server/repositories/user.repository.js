@@ -52,6 +52,23 @@ class UserRepository {
 		}
 	}
 
+	async getUserByEmail(email) {
+		let conn;
+		try {
+			conn = await this.pool.getConnection();
+			const rows = await conn.query("SELECT * FROM users WHERE email = ?", [
+				email,
+			]);
+			return rows[0] || null;
+		} catch (err) {
+			throw new Error(
+				"Erreur lors de la récupération de l'utilisateur: " + err.message
+			);
+		} finally {
+			if (conn) conn.release();
+		}
+	}
+
 	async updateUser(id, { pfp, name, bio, email, pwd }) {
 		let conn;
 		try {

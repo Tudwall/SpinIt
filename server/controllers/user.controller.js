@@ -25,6 +25,29 @@ class UserController {
 		}
 	}
 
+	async loginUser(req, res) {
+		if (!req.body.email || !req.body.pwd) {
+			res.json({ message: "email et mot de passe requis" });
+		}
+		const { email, pwd } = req.body;
+		try {
+			const userToken = await this.userService.loginUser({ email, pwd });
+			if (!userToken) {
+				throw new Error("Identifiants incorrects");
+			} else {
+				res.cookie("token", userToken, {
+					httpOnly: true,
+					secure: process.env.NODE_ENV === "production",
+					sameSite: "Strict",
+					expires: new Date(Date.now() + 3600000),
+				});
+				res.status(200).json({ message: "Connexion réussie" });
+			}
+		} catch (err) {
+			res.status(401).json(err.message);
+		}
+	}
+
 	async getUsers(req, res) {
 		try {
 			const users = await this.userService.getUsers();
