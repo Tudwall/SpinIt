@@ -1,0 +1,96 @@
+@use "variables";
+@use "mixins";
+@use "style";
+
+main {
+	display: flex;
+	flex-direction: column;
+	a {
+		text-decoration: none;
+		color: variables.$font-color;
+	}
+	section {
+		box-shadow: variables.$box-shadow;
+		padding-bottom: 0.5em;
+		.section-title {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding-top: 1em;
+			padding-right: 1em;
+			padding-left: 1em;
+			.displays {
+				display: flex;
+				gap: 0.5em;
+			}
+		}
+	}
+	.intro {
+		display: flex;
+		flex-direction: row;
+		gap: 2em;
+		padding: 2em;
+		img {
+			border-radius: 25px;
+		}
+		.bio {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			p {
+				max-width: 40%;
+			}
+		}
+	}
+	.collection {
+		.collection-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			width: fit-content;
+			justify-content: space-evenly;
+			gap: 1em;
+			padding-left: 2em;
+			padding-right: 2em;
+			.card {
+				@include mixins.card;
+				.add-collection,
+				.remove-collection {
+					cursor: pointer;
+					&:active {
+						transform: scale(0.9);
+					}
+				}
+			}
+		}
+	}
+	.wishlist {
+		.wishlist-wrapper {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 1em;
+			.element {
+				@include mixins.card;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	main {
+		.intro {
+			width: fit-content;
+			flex-direction: column;
+			img {
+				width: fit-content;
+			}
+			.bio {
+				width: fit-content;
+				p {
+					max-width: fit-content;
+				}
+			}
+		}
+	}
+}

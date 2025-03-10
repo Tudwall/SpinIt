@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../../styles/preferences.css" />
+		<title>SpinIt! - Profil</title>
+	</head>
+
+	<body>
+		<header class="shadow">
+			<div class="shadow header-wrapper">
+				<img src="../assets/icons/Burger.svg" class="menu-icon burger" />
+				<a href="../../index.html" aria-label="Accueil" class="logo"
+					><picture>
+						<source
+							srcset="../assets/icons/SpinIn-Mobile.svg"
+							media="(max-width:600px)"
+						/>
+						<img
+							src="../assets/icons/SpintIt-lineson.svg"
+							alt="Logo de SpinIt!"
+						/>
+					</picture>
+				</a>
+
+				<form>
+					<input
+						type="text"
+						placeholder="recherche..."
+						name="search"
+						aria-label="Barre de recherche"
+					/>
+					<div id="search-filters">
+						<ul>
+							<li>
+								<input
+									type="checkbox"
+									id="artists"
+									name="artists"
+									value="artists"
+								/><label for="artists">Artistes</label>
+							</li>
+							<li>
+								<input
+									type="checkbox"
+									id="albums"
+									name="albums"
+									value="albums"
+								/><label for="albums">Albums</label>
+							</li>
+							<li>
+								<input
+									type="checkbox"
+									id="songs"
+									name="songs"
+									value="songs"
+								/><label for="songs">Morceaux</label>
+							</li>
+						</ul>
+					</div>
+				</form>
+
+				<div class="menus">
+					<img
+						src="../assets/icons/Magnifier.svg"
+						aria-label="Barre de recherche"
+						class="menu-icon search-icon"
+					/>
+
+					<div class="dropdown">
+						<img
+							src="../assets/icons/Notification-bell.svg"
+							class="menu-icon"
+							id="notification-icon"
+						/>
+						<div id="notification-dropdown" class="dropdown-content">
+							<p>Aucune notification</p>
+						</div>
+					</div>
+
+					<div class="dropdown">
+						<img
+							src="../assets/icons/User.svg"
+							class="menu-icon"
+							id="user-icon"
+						/>
+						<div id="user-dropdown" class="dropdown-content">
+							<a href="profile.html">Profil</a>
+							<a href="collection.html">Collection</a>
+							<a href="wishlist.html">Liste de souhait</a>
+							<a href="preferences.html">Préférences</a>
+							<a href="#">Se déconnecter</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#">Populaires</a></li>
+					<li><a href="#">Récent</a></li>
+					<li><a href="#">Artistes</a></li>
+					<li><a href="#">Albums</a></li>
+					<li><a href="#">Communauté</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section>
+				<h2>Préférences</h2>
+				<div class="preferences-wrapper">
+					<div class="avatar-wrapper">
+						<img src="https://picsum.photos/250/250" alt="" />
+						<form>
+							<label for="avatar"
+								>Changer votre photo de profil: (.jpg ou .png, 250x250)</label
+							>
+							<input
+								type="file"
+								id="avatar"
+								name="avatar"
+								accept="image/png,
+						image/jpeg"
+							/>
+						</form>
+					</div>
+					<form class="bio-wrapper">
+						<label for="bio"
+							>A propos de vous: (ceci apparaitra sur votre profil, supporte le
+							markdown)</label
+						>
+						<textarea id="bio" name="bio" col="500" rows="10"></textarea>
+					</form>
+				</div>
+			</section>
+			<section class="dangerous">
+				<button id="delete-account">Supprimer mon compte</button>
+				<button id="data-claim">Réclamer mes données</button>
+			</section>
+		</main>
+
+		<footer>
+			<div class="lines"></div>
+		</footer>
+		<script src="../utils/buttons.js"></script>
+	</body>
+</html>

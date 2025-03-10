@@ -1,0 +1,227 @@
+@use "mixins";
+@use "variables";
+@import "../../styles/css-reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+	font-family: variables.$main-font;
+	height: 100vh;
+	width: 100vw;
+}
+
+h1,
+h2,
+h3 {
+	font-family: variables.$title1-3;
+}
+
+h4,
+h5 {
+	font-family: variables.$title4-5;
+}
+
+header {
+	background-color: variables.$background-color;
+	z-index: 99;
+	div {
+		form {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			img {
+				height: 2em;
+			}
+			input[type="text"] {
+				font-family: variables.$main-font;
+				border: none;
+				box-shadow: variables.$inset-shadow;
+				width: 33%;
+				border-radius: 50px;
+				padding: 1%;
+				background-color: variables.$accent-background-color;
+				position: relative;
+				display: inline-block;
+				&:focus {
+					outline: 0;
+				}
+				&:focus + #search-filters {
+					display: block;
+				}
+			}
+			#search-filters {
+				display: none;
+				font-family: variables.$main-font;
+				position: absolute;
+				background-color: variables.$accent-background-color;
+				border: none;
+				box-shadow: variables.$inset-shadow;
+				padding: 1%;
+				border-radius: 25px;
+				width: 28.5%;
+				top: 50%;
+				ul {
+					display: flex;
+					flex-direction: column;
+				}
+			}
+		}
+		a > picture > img {
+			height: 7em;
+			float: left;
+		}
+	}
+}
+
+nav {
+	font-family: variables.$title1-3;
+	font-size: 1.25em;
+	height: 2em;
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100%;
+		padding-top: 0.15%;
+		li {
+			text-align: center;
+			list-style-type: none;
+			flex-grow: 1;
+			a {
+				color: variables.$font-color;
+				text-decoration: none;
+				align-items: center;
+			}
+		}
+	}
+}
+
+main {
+	section {
+		padding-left: 1em;
+		box-shadow: variables.$box-shadow;
+		padding-bottom: 1em;
+	}
+}
+
+/* Trouver moyen pour mettre les ombres sur chaque ligne, peut être en faisant un gradient par ligne et en les ombrant */
+.yellow {
+	@include mixins.line(variables.$line-color-1);
+}
+
+.red {
+	@include mixins.line(variables.$line-color-2);
+}
+
+.blue {
+	@include mixins.line(variables.$line-color-3);
+}
+
+.header-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 1%;
+}
+
+.shadow {
+	box-shadow: variables.$box-shadow;
+}
+
+.menus {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	.menu-icon {
+		height: 2em;
+		filter: drop-shadow(variables.$drop-shadow);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.dropdown-content {
+		display: none;
+		flex-direction: column;
+		gap: 0.5em;
+		position: absolute;
+		background-color: variables.$accent-background-color;
+		box-shadow: variables.$inset-shadow;
+		padding: 1em;
+		border-radius: 25px;
+		z-index: 99;
+		left: -100px;
+		a {
+			text-decoration: none;
+			color: black;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.show {
+		display: flex;
+	}
+}
+
+.search-icon {
+	display: none;
+}
+
+.burger {
+	display: none;
+}
+
+footer {
+	z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	header {
+		nav {
+			display: none;
+		}
+		.header-wrapper {
+			display: flex;
+			justify-content: space-between;
+			float: none;
+
+			a {
+				width: 30%;
+				picture {
+					img {
+						height: auto;
+					}
+				}
+			}
+			form {
+				display: none;
+			}
+		}
+	}
+
+	.search-icon {
+		display: block;
+		padding-right: 0.25em;
+	}
+
+	.notification-menu,
+	.account-menu {
+		display: none;
+	}
+
+	.burger {
+		display: block;
+		padding-left: 0.25em;
+	}
+}

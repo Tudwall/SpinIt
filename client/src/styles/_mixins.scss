@@ -1,0 +1,104 @@
+@use "sass:color";
+@use "variables";
+
+@mixin button {
+	font-family: variables.$main-font;
+	background-color: variables.$input-background-color;
+	border-radius: 50px;
+	padding: 1em;
+	box-shadow: variables.$box-shadow;
+	border: 0;
+	a {
+		text-decoration: none;
+		color: variables.$font-color;
+	}
+	&:hover {
+		background-color: color.adjust(variables.$input-background-color, $lightness: -10%);
+		cursor: pointer;
+	}
+	&:active {
+		background-color: color.adjust(variables.$input-background-color, $lightness: -20%);
+		transform: scale(0.9);
+	}
+}
+
+@mixin card {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 12.5%;
+	background-color: variables.$card-background-color;
+	border-radius: 25px;
+	box-shadow: variables.$box-shadow;
+	.cover-art {
+		background-color: variables.$input-background-color;
+		border-top-right-radius: 25px;
+		border-top-left-radius: 25px;
+		margin-bottom: 1em;
+	}
+	.info {
+		margin-bottom: 2em;
+		padding-right: 0.25em;
+		padding-left: 0.25em;
+	}
+	.actions {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 0.5em;
+	}
+	.stars {
+		filter: drop-shadow(variables.$drop-shadow);
+	}
+	.add-collection {
+		@extend .stars;
+		width: 1em;
+	}
+	.add-wishlist {
+		@extend .add-collection;
+		margin-right: 0.5em;
+	}
+}
+
+@mixin list {
+	display: flex;
+	flex-direction: row;
+	flex-basis: auto;
+	background-color: variables.$input-background-color;
+	border-radius: 10px;
+	box-shadow: variables.$box-shadow;
+	.cover-art {
+		background-color: variables.$input-background-color;
+		height: 2em;
+		border-bottom-left-radius: 10px;
+		margin: 0;
+	}
+	.info {
+		display: flex;
+		flex-direction: row;
+		padding-right: 0.25em;
+		padding-left: 0.25em;
+		margin: 0;
+	}
+	.actions {
+		display: flex;
+		justify-content: space-around;
+		margin: 0;
+	}
+	.stars {
+		filter: drop-shadow(variables.$drop-shadow);
+	}
+	.add-collection {
+		@extend .stars;
+	}
+	.add-wishlist {
+		@extend .stars;
+		margin: 0;
+		padding-right: 0.2em;
+	}
+}
+
+@mixin line($color) {
+	height: 100px;
+	background-image: linear-gradient(to bottom, $color, $color 100%);
+	box-shadow: variables.$box-shadow;
+	background-size: 100% 100px;
+}

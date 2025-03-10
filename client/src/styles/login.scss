@@ -1,0 +1,111 @@
+@use "sass:color";
+@use "mixins";
+@use "style";
+@use "variables";
+
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	form {
+		width: 33%;
+		height: 50%;
+	}
+}
+
+fieldset {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	background-color: variables.$background-color;
+	padding: 2em;
+	border-radius: 25px;
+	* {
+		padding: 0.2em;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+		font-family: variables.$main-font;
+		border: none;
+		box-shadow: variables.$inset-shadow;
+		border-radius: 50px;
+		padding: 1em;
+		background-color: variables.$input-background-color;
+		width: 95%;
+		align-self: center;
+		margin-bottom: 1em;
+	}
+	input[type="email"]:focus {
+		outline: 0;
+	}
+	button[type="submit"] {
+		@include mixins.button;
+		align-self: center;
+		padding-left: 15%;
+		padding-right: 15%;
+		margin-top: 2em;
+		&:disabled {
+			background-color: color.adjust(variables.$line-color-2, $lightness: 10%);
+			color: variables.$background-color;
+			&:hover {
+				transform: scale(100%);
+			}
+		}
+	}
+	.hidden {
+		display: none;
+	}
+	.password-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		.show-password {
+			background-color: transparent;
+			cursor: pointer;
+			outline: none;
+			border: none;
+			img {
+				width: 3em;
+				&:hover {
+					transform: scale(90%);
+				}
+			}
+		}
+	}
+
+	.requirement {
+		font-size: 0.75em;
+		&:not(.valid) {
+			color: variables.$line-color-1;
+		}
+		.error {
+			color: variables.$line-color-2;
+		}
+	}
+	.requirement.valid {
+		color: green;
+	}
+
+	.password-requirements {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1em;
+	}
+
+	#password-desc {
+		margin-bottom: 15%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	main {
+		form {
+			width: 100%;
+			height: fit-content;
+		}
+	}
+}

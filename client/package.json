@@ -1,0 +1,23 @@
+{
+	"name": "spinit-front",
+	"version": "1.0.0",
+	"description": "Personal project for my web developer course by AFEC, the goal is to use everything learned during the course to make a website. This website is a tracking service for all your favorite music releases, just like Discogs which inspired me a lot functionality-wise.",
+	"main": "src/app.js",
+	"type": "module",
+	"scripts": {
+		"build": "sass src/styles:client/public/styles",
+		"start": "nodemon src/app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Tudwall/SpinIt.git"
+	},
+	"keywords": [],
+	"author": "Pierre Laffaille",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Tudwall/SpinIt/issues"
+	},
+	"homepage": "https://github.com/Tudwall/SpinIt#readme"
+}
