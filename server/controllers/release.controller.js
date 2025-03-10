@@ -6,11 +6,9 @@ class ReleaseController {
 	}
 
 	async createRelease(req, res, next) {
-		const { id } = req.params;
 		const { cover, title, artists, release_date, discogs_id } = req.body;
 		try {
 			const newRelease = await this.releaseService.createRelease({
-				id,
 				cover,
 				title,
 				artists,
