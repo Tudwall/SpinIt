@@ -12,15 +12,15 @@ class UserRepository {
 		});
 	}
 
-	async createUser({ id, pfp, name, bio, email, pwd }) {
+	async createUser({ pfp, name, bio, email, pwd }) {
 		let conn;
 		try {
 			conn = await this.pool.getConnection();
 			const result = await conn.query(
-				"INSERT INTO Users (id, pfp, name, bio, email, pwd) VALUES (?,?,?,?,?,?) RETURNING *",
-				[id, pfp, name, bio, email, pwd]
+				"INSERT INTO Users (pfp, name, bio, email, pwd) VALUES (?,?,?,?,?) RETURNING id, pfp, name, bio, email",
+				[pfp, name, bio, email, pwd]
 			);
-			return result;
+			return result[0];
 		} catch (err) {
 			throw new Error(
 				"Erreur lors de la création de l'utilisateur" + err.message
