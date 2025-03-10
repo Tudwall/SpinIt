@@ -12,6 +12,7 @@ CREATE TABLE
         bio VARCHAR(350),
         email VARCHAR(350) UNIQUE,
         pwd VARCHAR(100),
+        admin BOOLEAN NOT NULL DEFAULT FALSE,
         createdOn TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         updatedOn TIMESTAMP,
         isDeleted BOOLEAN NOT NULL DEFAULT FALSE
