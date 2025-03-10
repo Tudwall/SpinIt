@@ -6,10 +6,9 @@ class ReleaseService {
 		this.releaseRepository = new ReleaseRepository();
 	}
 
-	async createRelease({ id, cover, title, artists, release_date, discogs_id }) {
+	async createRelease({ cover, title, artists, release_date, discogs_id }) {
 		try {
 			return await this.releaseRepository.createRelease({
-				id,
 				cover,
 				title,
 				artists,
