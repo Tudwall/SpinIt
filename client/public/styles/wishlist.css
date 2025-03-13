@@ -1,0 +1,287 @@
+@charset "UTF-8";
+@import "../../styles/css-reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Montserrat", serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fira Sans", serif;
+}
+
+h4,
+h5 {
+  font-family: "Cardo", serif;
+}
+
+header {
+  background-color: #ededed;
+  z-index: 99;
+}
+header div form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header div form img {
+  height: 2em;
+}
+header div form input[type=text] {
+  font-family: "Montserrat", serif;
+  border: none;
+  box-shadow: inset 2.75px 2.75px 7px rgba(0, 0, 0, 0.2509803922);
+  width: 33%;
+  border-radius: 50px;
+  padding: 1%;
+  background-color: #fbe6bd;
+  position: relative;
+  display: inline-block;
+}
+header div form input[type=text]:focus {
+  outline: 0;
+}
+header div form input[type=text]:focus + #search-filters {
+  display: block;
+}
+header div form #search-filters {
+  display: none;
+  font-family: "Montserrat", serif;
+  position: absolute;
+  background-color: #fbe6bd;
+  border: none;
+  box-shadow: inset 2.75px 2.75px 7px rgba(0, 0, 0, 0.2509803922);
+  padding: 1%;
+  border-radius: 25px;
+  width: 28.5%;
+  top: 50%;
+}
+header div form #search-filters ul {
+  display: flex;
+  flex-direction: column;
+}
+header div a > picture > img {
+  height: 7em;
+  float: left;
+}
+
+nav {
+  font-family: "Fira Sans", serif;
+  font-size: 1.25em;
+  height: 2em;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  padding-top: 0.15%;
+}
+nav ul li {
+  text-align: center;
+  list-style-type: none;
+  flex-grow: 1;
+}
+nav ul li a {
+  color: #474747;
+  text-decoration: none;
+  align-items: center;
+}
+
+main section {
+  padding-left: 1em;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2509803922);
+  padding-bottom: 1em;
+}
+
+/* Trouver moyen pour mettre les ombres sur chaque ligne, peut être en faisant un gradient par ligne et en les ombrant */
+.yellow {
+  height: 100px;
+  background-image: linear-gradient(to bottom, #f2af26, #f2af26 100%);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2509803922);
+  background-size: 100% 100px;
+}
+
+.red {
+  height: 100px;
+  background-image: linear-gradient(to bottom, #ad343e, #ad343e 100%);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2509803922);
+  background-size: 100% 100px;
+}
+
+.blue {
+  height: 100px;
+  background-image: linear-gradient(to bottom, #3f88c5, #3f88c5 100%);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2509803922);
+  background-size: 100% 100px;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1%;
+}
+
+.shadow {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2509803922);
+}
+
+.menus {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown .menu-icon {
+  height: 2em;
+  filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.2509803922));
+}
+.dropdown .menu-icon:hover {
+  cursor: pointer;
+}
+.dropdown .dropdown-content {
+  display: none;
+  flex-direction: column;
+  gap: 0.5em;
+  position: absolute;
+  background-color: #fbe6bd;
+  box-shadow: inset 2.75px 2.75px 7px rgba(0, 0, 0, 0.2509803922);
+  padding: 1em;
+  border-radius: 25px;
+  z-index: 99;
+  left: -100px;
+}
+.dropdown .dropdown-content a {
+  text-decoration: none;
+  color: black;
+}
+.dropdown .dropdown-content a:hover {
+  text-decoration: underline;
+}
+.dropdown .show {
+  display: flex;
+}
+
+.search-icon {
+  display: none;
+}
+
+.burger {
+  display: none;
+}
+
+footer {
+  z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header nav {
+    display: none;
+  }
+  header .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    float: none;
+  }
+  header .header-wrapper a {
+    width: 30%;
+  }
+  header .header-wrapper a picture img {
+    height: auto;
+  }
+  header .header-wrapper form {
+    display: none;
+  }
+  .search-icon {
+    display: block;
+    padding-right: 0.25em;
+  }
+  .notification-menu,
+  .account-menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+    padding-left: 0.25em;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-bottom: 0.5em;
+  z-index: 2;
+}
+main h2 {
+  text-align: center;
+  font-size: 1.2em;
+}
+main section {
+  display: flex;
+  flex-direction: column;
+}
+main section .collection-filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main section .collection-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+main section .collection-wrapper .element {
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2509803922);
+  height: 3em;
+  justify-content: space-between;
+  align-items: center;
+}
+main section .collection-wrapper .element .cover-art {
+  background-color: #d9d9d9;
+  height: 2em;
+  border-bottom-left-radius: 10px;
+  margin: 0;
+}
+main section .collection-wrapper .element .info {
+  display: flex;
+  flex-direction: row;
+  padding-right: 0.25em;
+  padding-left: 0.25em;
+  margin: 0;
+}
+main section .collection-wrapper .element .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+main section .collection-wrapper .element .stars, main section .collection-wrapper .element .add-wishlist, main section .collection-wrapper .element .add-collection {
+  filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.2509803922));
+}
+main section .collection-wrapper .element .add-wishlist {
+  margin: 0;
+  padding-right: 0.2em;
+}
+main section .collection-wrapper .element .remove-wishlist {
+  filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.2509803922));
+}
+
+/*# sourceMappingURL=wishlist.css.map */
