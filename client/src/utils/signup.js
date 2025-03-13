@@ -105,18 +105,22 @@ form.addEventListener("change", () => {
 	handleFormValidation();
 });
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
 	e.preventDefault();
 	const validForm = handleFormValidation();
 	const accountInfo = {
-		username: username.value.trim(),
+		name: username.value.trim(),
 		email: email.value.trim(),
-		password: password.value.trim(),
+		pwd: password.value.trim(),
 	};
 
 	if (!validForm) {
 		return false;
 	}
 
-	alert("form envoyé");
+	await fetch("http://localhost:3000/users/register", {
+		method: "POST",
+		body: JSON.stringify(accountInfo),
+		RequestInit.mode: cors
+	});
 });

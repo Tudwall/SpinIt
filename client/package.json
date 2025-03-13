@@ -5,7 +5,7 @@
 	"main": "src/app.js",
 	"type": "module",
 	"scripts": {
-		"build": "sass src/styles:client/public/styles",
+		"build": "sass src/styles:public/styles",
 		"start": "nodemon src/app.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
