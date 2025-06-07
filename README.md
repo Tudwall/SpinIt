@@ -9,15 +9,16 @@ This website is a tracking service for all your favorite music releases, just li
 ### HOW TO START
 
 In /server
-`bash
+
+```bash
 npm i
-`
+```
 
 then in /client and /server
 
-`bash
+```bash
 npm start
-`
+```
 
 #### DEPENDENCIES
 
