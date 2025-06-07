@@ -6,6 +6,27 @@ This website is a tracking service for all your favorite music releases, just li
 [Mockup](https://www.figma.com/design/EMKkCUtnZxbWHzHUpLrBFg/Maquette?node-id=3-372&t=Zmu5bZuvrkEsq5Tl-1)
 [Database schema](https://drawsql.app/teams/localhost-12/diagrams/spinit)
 
+### HOW TO START
+
+In /server
+`bash
+npm i
+`
+
+then in /client and /server
+
+`bash
+npm start
+`
+
+#### DEPENDENCIES
+
+- [argon2](https://www.npmjs.com/package/argon2)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [express](https://www.npmjs.com/package/express)
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- [mariadb](https://www.npmjs.com/package/mariadb)
+
 #### ATTRIBUTIONS
 
 Using [Discogs API](https://www.discogs.com/developers/#)  

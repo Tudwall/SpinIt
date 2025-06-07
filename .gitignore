@@ -1,5 +1,6 @@
 client/public/styles/*.css
 client/public/styles/*.map
+client/node_modules
 !client/public/styles/css-reset.css
 server/node_modules
 server/.env
